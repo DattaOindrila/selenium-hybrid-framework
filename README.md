@@ -328,6 +328,35 @@ artefacts uploaded, no deprecation warnings.
 
 ---
 
+## A bug the framework found in its own tests
+
+Worth reading, because it is the clearest evidence that the reporting layer earns its place.
+
+The suite passed 120/120 locally, every time. On GitHub Actions it intermittently failed in
+`CheckoutOrderTest` with `TimeoutException: waiting for presence of .product-information` — the
+product detail page never appearing. The obvious reading was "the CI runner is slower", so the
+explicit wait was raised from 20s to 30s. It did not help; the next run failed two tests.
+
+The answer was in the failure screenshot the listener had captured automatically and uploaded as
+a build artefact. It showed **the home page, with "Logged in as ..." in the header** — so the
+login had succeeded and the navigation to the product page had simply been lost.
+
+The cause was a race in the test code, not in the application and not in the network.
+`LoginPage.login()` submits the form and returns immediately — it has to, because the negative
+tests need it to return when login *fails* too. `CheckoutOrderTest` then called `driver.get()` for
+the product page while the login redirect was still in flight; the browser abandoned the
+navigation and finished on wherever the redirect landed. On a laptop the redirect won the race
+every time. On a slower runner it did not.
+
+The fix is `HeaderComponent.waitUntilLoggedIn()`, called after logging in and before navigating
+away. Every other login site in the suite already asserted on the header immediately, which waits
+for the same condition — an audit confirmed `CheckoutOrderTest` was the only one that navigated
+straight away.
+
+Two things this illustrates: a screenshot captured automatically at the moment of failure is worth
+more than any amount of log-reading, and the first plausible explanation for an intermittent
+failure is often wrong. Raising a timeout is what you do when you have not found the cause yet.
+
 ## Known limitations
 
 Written plainly, because a portfolio that claims everything worked perfectly is not believable.
@@ -372,13 +401,11 @@ Written plainly, because a portfolio that claims everything worked perfectly is 
    shared public site reached over the open internet, and a small number of failures are genuinely
    environmental. Every retry is logged. The limit is one and is not raised, because retries hide
    real bugs — a test that only passes on the second attempt is telling you something.
-   The local run needed zero retries. The **first two CI runs each needed exactly one**, both a
-   product detail page failing to appear within the 20-second explicit wait on the runner. Two
-   runs failing the same way is a pattern, not flakiness, so the cause was fixed —
-   `explicit.wait` is now 30s — rather than left for the retry to paper over. **CI has run clean
-   with zero retries since.** This is reported here rather than buried, because a pass rate quoted
-   without mentioning retries is misleading. Set `retry.count=0` in `config.properties` to disable
-   the mechanism entirely.
+   Retries are reported here rather than buried, because a pass rate quoted without mentioning
+   them is misleading. The local runs needed zero. Several early CI runs needed one, and one CI
+   run failed outright — see "A bug the framework found in its own tests" below, because the
+   cause turned out to be a real defect in the test code rather than flakiness. Set
+   `retry.count=0` in `config.properties` to disable the mechanism entirely.
 
 9. **Parallelism is deliberately low** (`thread-count=2`). The framework is thread-safe and this
    number could go higher, but the target is a shared practice site and hammering it would be both

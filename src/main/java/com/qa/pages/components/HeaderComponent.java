@@ -73,6 +73,27 @@ public class HeaderComponent extends BasePage {
         return isDisplayed(loggedInAsLabel);
     }
 
+    /**
+     * Blocks until the header shows a logged-in session.
+     *
+     * WHY THIS IS NEEDED. LoginPage.login() submits the form and returns straight
+     * away - it cannot wait for success, because the negative tests need it to
+     * return when login FAILS too. So any test that logs in and then navigates
+     * somewhere else has a race: if the driver.get() is issued while the login
+     * redirect is still in flight, the browser abandons it and lands wherever the
+     * redirect finishes, which is the home page.
+     *
+     * That is not theoretical. It passed on a laptop and failed on a CI runner,
+     * and the framework's own failure screenshot is what identified it - the image
+     * showed the home page with "Logged in as ..." in the header, proving the login
+     * had worked and the navigation had been lost.
+     *
+     * Call this after logging in and before navigating away.
+     */
+    public void waitUntilLoggedIn() {
+        wait.waitForVisibility(loggedInAsLabel);
+    }
+
     public String getLoggedInUsername() {
         // Rendered as "Logged in as Alice"
         return getText(loggedInAsLabel).replace("Logged in as", "").trim();

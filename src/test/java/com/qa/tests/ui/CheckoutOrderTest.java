@@ -214,6 +214,8 @@ public class CheckoutOrderTest extends BaseTest {
     private void logIn() {
         homePage.header().goToSignupLogin();
         new LoginPage(driver).login(shopper.getEmail(), shopper.getPassword());
+        // Do not navigate until the session actually exists - see waitUntilLoggedIn().
+        homePage.header().waitUntilLoggedIn();
     }
 
     private void addProductToCart(int productId, int quantity) {
