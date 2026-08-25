@@ -372,10 +372,10 @@ Written plainly, because a portfolio that claims everything worked perfectly is 
    shared public site reached over the open internet, and a small number of failures are genuinely
    environmental. Every retry is logged. The limit is one and is not raised, because retries hide
    real bugs — a test that only passes on the second attempt is telling you something.
-   **The local 120/120 run needed zero retries. The first CI run needed exactly one**:
-   `CheckoutOrderTest.checkoutTotalMatchesTheCartTotal` timed out waiting for the product detail
-   page to load on the runner, and passed on the second attempt. That is precisely the case this
-   mechanism is for — a slow response from a shared public site, not a defect — and it is reported
+   The local run needed zero retries. The **first two CI runs each needed exactly one**, both a
+   product detail page failing to appear within the 20-second explicit wait on the runner. Two
+   runs failing the same way is a pattern, not flakiness, so the cause was fixed —
+   `explicit.wait` is now 30s — rather than left for the retry to paper over. This is reported
    here rather than buried, because a pass rate quoted without mentioning retries is misleading.
    Set `retry.count=0` in `config.properties` to disable the mechanism entirely.
 
