@@ -1,0 +1,32 @@
+# ---- Build output ----
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# ---- Generated test output ----
+# Reports are evidence of one specific run, not source. The README embeds
+# committed screenshots under docs/ instead.
+reports/
+test-output/
+*.log
+
+# ---- IDE ----
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+out/
+bin/
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Secrets ----
+# Nothing in this repository needs a credential, and nothing should start to.
+*.env
+.env.local
+secrets.properties

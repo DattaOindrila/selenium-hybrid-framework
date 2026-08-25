@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GET /api/getUserDetailByEmail",
+  "type": "object",
+  "required": ["responseCode", "user"],
+  "properties": {
+    "responseCode": { "type": "integer" },
+    "user": {
+      "type": "object",
+      "required": ["id", "name", "email", "title", "first_name", "last_name",
+                   "country", "state", "city", "zipcode"],
+      "properties": {
+        "id":          { "type": "integer" },
+        "name":        { "type": "string" },
+        "email":       { "type": "string", "format": "email" },
+        "title":       { "type": "string", "enum": ["Mr", "Mrs"] },
+        "birth_day":   { "type": "string" },
+        "birth_month": { "type": "string" },
+        "birth_year":  { "type": "string" },
+        "first_name":  { "type": "string" },
+        "last_name":   { "type": "string" },
+        "company":     { "type": "string" },
+        "address1":    { "type": "string" },
+        "address2":    { "type": "string" },
+        "country":     { "type": "string" },
+        "state":       { "type": "string" },
+        "city":        { "type": "string" },
+        "zipcode":     { "type": "string" }
+      }
+    }
+  }
+}

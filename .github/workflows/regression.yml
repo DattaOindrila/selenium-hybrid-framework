@@ -1,0 +1,113 @@
+name: Regression
+
+# Runs on every push to main, on every pull request, and on demand from the
+# Actions tab. The manual trigger is what lets a reviewer re-run the suite
+# without pushing a commit.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: 'Suite file to run'
+        required: false
+        default: 'regression.xml'
+        type: choice
+        options:
+          - regression.xml
+          - smoke.xml
+          - api.xml
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    name: Headless Chrome on ubuntu-latest
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          # Caches ~/.m2 keyed on pom.xml, so a run that changes no dependency
+          # skips re-downloading roughly 90 MB of jars.
+          cache: 'maven'
+
+      # ubuntu-latest ships Chrome pre-installed, but pinning it explicitly means a
+      # change to the runner image cannot silently change which browser was tested.
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Report the toolchain actually used
+        run: |
+          java -version
+          mvn -version
+          chrome --version || google-chrome --version
+
+      # Selenium Manager resolves the matching chromedriver at runtime - there is no
+      # WebDriverManager dependency and no driver binary in the repository.
+      - name: Run the regression suite
+        run: >
+          mvn -B clean test
+          -Dsuite=${{ github.event.inputs.suite || 'regression.xml' }}
+          -Dbrowser=chrome
+          -Dheadless=true
+
+      # always(): the report is at its most useful when the suite failed.
+      - name: Upload the ExtentReport
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: extent-report
+          path: |
+            reports/*.html
+            reports/screenshots/
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Upload the Surefire results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: target/surefire-reports/
+          retention-days: 30
+          if-no-files-found: warn
+
+      # Reads the counts straight out of TestNG's own results file, so the summary
+      # can never disagree with what actually ran.
+      - name: Summarise the run
+        if: always()
+        run: |
+          RESULTS=target/surefire-reports/testng-results.xml
+          {
+            echo "### Regression run"
+            echo ""
+            if [ -f "$RESULTS" ]; then
+              PASSED=$(sed -n 's/.*passed="\([0-9]*\)".*/\1/p' "$RESULTS" | head -1)
+              FAILED=$(sed -n 's/.*failed="\([0-9]*\)".*/\1/p' "$RESULTS" | head -1)
+              SKIPPED=$(sed -n 's/.*skipped="\([0-9]*\)".*/\1/p' "$RESULTS" | head -1)
+              TOTAL=$(sed -n 's/.*total="\([0-9]*\)".*/\1/p' "$RESULTS" | head -1)
+              echo "| Result | Count |"
+              echo "|---|---|"
+              echo "| Passed | ${PASSED} |"
+              echo "| Failed | ${FAILED} |"
+              echo "| Skipped | ${SKIPPED} |"
+              echo "| Total | ${TOTAL} |"
+              echo ""
+              echo "Browser: headless Chrome on ubuntu-latest"
+            else
+              echo "No TestNG results file was produced - the build failed before the suite ran."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

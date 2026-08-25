@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.qa</groupId>
+  <artifactId>selenium-hybrid-framework</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>selenium-hybrid-framework</name>
+  <description>Hybrid UI + API test automation framework: Selenium WebDriver, TestNG, Rest Assured</description>
+
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- Every version is pinned deliberately. Verified against Maven Central on 2026-08-24. -->
+    <selenium.version>4.47.0</selenium.version>
+    <testng.version>7.12.0</testng.version>
+    <restassured.version>6.0.1</restassured.version>
+    <poi.version>5.5.1</poi.version>
+    <extentreports.version>5.1.2</extentreports.version>
+    <log4j.version>2.26.1</log4j.version>
+    <datafaker.version>2.7.0</datafaker.version>
+    <jackson.version>2.20.0</jackson.version>
+
+    <surefire.version>3.5.6</surefire.version>
+    <compiler.plugin.version>3.15.0</compiler.plugin.version>
+
+    <!-- Default suite. Override on the command line:  mvn test -Dsuite=smoke.xml -->
+    <suite>regression.xml</suite>
+  </properties>
+
+  <dependencies>
+    <!-- ============ UI automation ============
+         Selenium 4.6+ ships Selenium Manager, which downloads and matches the
+         correct driver binary automatically. That is why there is deliberately
+         no WebDriverManager dependency here. -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>${selenium.version}</version>
+    </dependency>
+
+    <!-- ============ Test runner ============ -->
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>${testng.version}</version>
+    </dependency>
+
+    <!-- ============ API testing ============ -->
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>${restassured.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>json-schema-validator</artifactId>
+      <version>${restassured.version}</version>
+    </dependency>
+
+    <!-- Rest Assured's object mapping for request/response POJOs -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
+    <!-- ============ Data-driven testing ============ -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>${poi.version}</version>
+    </dependency>
+
+    <!-- ============ Reporting ============ -->
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>${extentreports.version}</version>
+    </dependency>
+
+    <!-- ============ Logging ============ -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    <!-- Selenium and Rest Assured log through SLF4J. This binding routes their
+         output into the same Log4j2 configuration as the framework's own logs,
+         instead of SLF4J falling back to a no-op logger and discarding it. -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j2-impl</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+
+    <!-- ============ Test data generation ============
+         Unique e-mail addresses and realistic names for registration tests, so
+         reruns never collide with an account created by a previous run. -->
+    <dependency>
+      <groupId>net.datafaker</groupId>
+      <artifactId>datafaker</artifactId>
+      <version>${datafaker.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${compiler.plugin.version}</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${surefire.version}</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>src/test/resources/suites/${suite}</suiteXmlFile>
+          </suiteXmlFiles>
+          <!-- A failing test must fail the build, but the whole suite still runs
+               so the report shows every result, not just the first failure. -->
+          <testFailureIgnore>false</testFailureIgnore>
+          <systemPropertyVariables>
+            <browser>${browser}</browser>
+            <headless>${headless}</headless>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Lets -Dbrowser / -Dheadless be optional: without these defaults Maven would
+       pass the literal string "${browser}" through to the test JVM. -->
+  <profiles>
+    <profile>
+      <id>default-browser</id>
+      <activation><property><name>!browser</name></property></activation>
+      <properties><browser>chrome</browser></properties>
+    </profile>
+    <profile>
+      <id>default-headless</id>
+      <activation><property><name>!headless</name></property></activation>
+      <properties><headless>false</headless></properties>
+    </profile>
+  </profiles>
+
+</project>

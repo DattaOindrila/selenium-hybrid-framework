@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "The envelope every non-collection endpoint returns",
+  "description": "Note there is no HTTP status involved: responseCode is the API's own status field inside a body served with HTTP 200.",
+  "type": "object",
+  "required": ["responseCode", "message"],
+  "properties": {
+    "responseCode": { "type": "integer", "enum": [200, 201, 400, 404, 405] },
+    "message":      { "type": "string", "minLength": 1 }
+  }
+}

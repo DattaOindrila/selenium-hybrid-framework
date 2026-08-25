@@ -1,0 +1,1007 @@
+$ mvn clean test -Dsuite=regression.xml -Dheadless=true
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.qa:selenium-hybrid-framework >------------------
+[INFO] Building selenium-hybrid-framework 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ selenium-hybrid-framework ---
+[INFO] Deleting /Users/sayan.ghosh/Documents/Oindrila/selenium-hybrid-framework/target
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ selenium-hybrid-framework ---
+[INFO] skip non existing resourceDirectory /Users/sayan.ghosh/Documents/Oindrila/selenium-hybrid-framework/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ selenium-hybrid-framework ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 29 source files with javac [debug release 17] to target/classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ selenium-hybrid-framework ---
+[INFO] Copying 10 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ selenium-hybrid-framework ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 19 source files with javac [debug release 17] to target/test-classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ selenium-hybrid-framework ---
+[INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
+[WARNING] System property [headless] overwritten by user properties from Maven session
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+2026-08-25 11:56:54.182 [main] INFO  c.q.u.ConfigReader - Loaded config/config.properties (18 keys)
+2026-08-25 11:56:54.229 [main] INFO  c.q.u.ExtentManager - ExtentReport will be written to /Users/sayan.ghosh/Documents/Oindrila/selenium-hybrid-framework/reports/ExtentReport_20260825_115654.html
+2026-08-25 11:56:54.230 [main] INFO  c.q.l.TestListener - SUITE START: API Tests
+2026-08-25 11:56:54.324 [TestNG-test-API Tests-2] INFO  c.q.b.BaseApiTest - API base URI: https://automationexercise.com
+2026-08-25 11:56:54.324 [TestNG-test-API Tests-1] INFO  c.q.b.BaseApiTest - API base URI: https://automationexercise.com
+2026-08-25 11:56:54.329 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: everyProductHasAWellFormedPriceAndBrand
+2026-08-25 11:56:54.329 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - TEST START: productsListReturnsProducts
+2026-08-25 11:56:54.329 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - GET /api/productsList
+2026-08-25 11:56:54.329 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - GET /api/productsList
+2026-08-25 11:56:56.772 [TestNG-test-API Tests-2] INFO  c.q.u.ExtentManager - Validated 34 products
+2026-08-25 11:56:56.773 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - PASS: productsListReturnsProducts (2.4s)
+2026-08-25 11:56:56.773 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: everyProductHasAWellFormedPriceAndBrand (2.4s)
+2026-08-25 11:56:56.774 [TestNG-test-API Tests-1] INFO  c.q.b.BaseApiTest - API base URI: https://automationexercise.com
+2026-08-25 11:56:56.774 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: everySearchResultIsJustifiedByNameOrCategory
+2026-08-25 11:56:56.774 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - POST /api/searchProduct search_product=top
+2026-08-25 11:56:56.775 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - TEST START: createAccountRegistersANewUser
+2026-08-25 11:56:56.833 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/createAccount for qa.auto.1787639216805.1@mailinator.com
+2026-08-25 11:56:57.891 [TestNG-test-API Tests-2] INFO  c.q.u.ExtentManager - 14 results, every one justified by name or category
+2026-08-25 11:56:57.891 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: everySearchResultIsJustifiedByNameOrCategory (1.1s)
+2026-08-25 11:56:57.892 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: getAllBrandsReturnsTheBrandList
+2026-08-25 11:56:57.892 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - GET /api/brandsList
+2026-08-25 11:56:58.350 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/verifyLogin for qa.auto.1787639216805.1@mailinator.com
+2026-08-25 11:56:58.655 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: getAllBrandsReturnsTheBrandList (0.8s)
+2026-08-25 11:56:58.655 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: getAllProductsReturnsTheCatalogue
+2026-08-25 11:56:58.655 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - GET /api/productsList
+2026-08-25 11:56:59.340 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - PASS: createAccountRegistersANewUser (2.6s)
+2026-08-25 11:56:59.341 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - TEST START: deleteAccountRemovesTheUser
+2026-08-25 11:56:59.341 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/createAccount for qa.auto.1787639219341.2@mailinator.com
+2026-08-25 11:57:00.201 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - DELETE /api/deleteAccount for qa.auto.1787639219341.2@mailinator.com
+2026-08-25 11:57:00.618 [TestNG-test-API Tests-2] INFO  c.q.u.ExtentManager - Catalogue contains 34 products
+2026-08-25 11:57:00.619 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: getAllProductsReturnsTheCatalogue (2.0s)
+2026-08-25 11:57:00.619 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: postToProductsListIsRejected
+2026-08-25 11:57:00.619 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - POST /api/productsList (expected to be rejected)
+2026-08-25 11:57:01.699 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/verifyLogin for qa.auto.1787639219341.2@mailinator.com
+2026-08-25 11:57:02.069 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: postToProductsListIsRejected (1.5s)
+2026-08-25 11:57:02.070 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: productsPayloadMatchesItsSchema
+2026-08-25 11:57:02.070 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - GET /api/productsList
+2026-08-25 11:57:03.066 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: productsPayloadMatchesItsSchema (1.0s)
+2026-08-25 11:57:03.067 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: putToBrandsListIsRejected
+2026-08-25 11:57:03.067 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - PUT /api/brandsList (expected to be rejected)
+2026-08-25 11:57:03.184 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - PASS: deleteAccountRemovesTheUser (3.8s)
+2026-08-25 11:57:03.184 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - TEST START: deleteOnVerifyLoginIsRejected
+2026-08-25 11:57:03.185 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - DELETE /api/verifyLogin (expected to be rejected)
+2026-08-25 11:57:04.473 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - PASS: deleteOnVerifyLoginIsRejected (1.3s)
+2026-08-25 11:57:04.474 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - TEST START: registeringTheSameAddressTwiceIsRefused
+2026-08-25 11:57:04.474 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/createAccount for qa.auto.1787639224474.3@mailinator.com
+2026-08-25 11:57:04.474 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: putToBrandsListIsRejected (1.4s)
+2026-08-25 11:57:04.475 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: searchForSomethingThatDoesNotExistReturnsNoProducts
+2026-08-25 11:57:04.475 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - POST /api/searchProduct search_product=zzzznotaproduct
+2026-08-25 11:57:05.161 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: searchForSomethingThatDoesNotExistReturnsNoProducts (0.7s)
+2026-08-25 11:57:05.349 [TestNG-test-API Tests-2] INFO  c.q.u.ExcelReader - Read 8 data row(s) from sheet 'Search'
+2026-08-25 11:57:05.350 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsFromTheSpreadsheetReturnResults [{testCaseId=SEARCH_01, searchTerm=top, expectMatches=true, description=Common term present in several product names}]
+2026-08-25 11:57:05.350 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - POST /api/searchProduct search_product=top
+2026-08-25 11:57:05.873 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/createAccount for qa.auto.1787639224474.3@mailinator.com
+2026-08-25 11:57:06.487 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsFromTheSpreadsheetReturnResults [{testCaseId=SEARCH_01, searchTerm=top, expectMatches=true, description=Common term present in several product names}] (1.1s)
+2026-08-25 11:57:06.487 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsFromTheSpreadsheetReturnResults [{testCaseId=SEARCH_02, searchTerm=dress, expectMatches=true, description=Category-style term}]
+2026-08-25 11:57:06.487 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - POST /api/searchProduct search_product=dress
+2026-08-25 11:57:07.356 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - PASS: registeringTheSameAddressTwiceIsRefused (2.9s)
+2026-08-25 11:57:07.356 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - TEST START: storedUserDetailsMatchWhatWasRegistered
+2026-08-25 11:57:07.356 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/createAccount for qa.auto.1787639227356.5@mailinator.com
+2026-08-25 11:57:07.365 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsFromTheSpreadsheetReturnResults [{testCaseId=SEARCH_02, searchTerm=dress, expectMatches=true, description=Category-style term}] (0.9s)
+2026-08-25 11:57:07.365 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsFromTheSpreadsheetReturnResults [{testCaseId=SEARCH_03, searchTerm=tshirt, expectMatches=true, description=Compound word without a space}]
+2026-08-25 11:57:07.365 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - POST /api/searchProduct search_product=tshirt
+2026-08-25 11:57:08.674 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - GET /api/getUserDetailByEmail?email=qa.auto.1787639227356.5@mailinator.com
+2026-08-25 11:57:08.772 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsFromTheSpreadsheetReturnResults [{testCaseId=SEARCH_03, searchTerm=tshirt, expectMatches=true, description=Compound word without a space}] (1.4s)
+2026-08-25 11:57:08.773 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsFromTheSpreadsheetReturnResults [{testCaseId=SEARCH_04, searchTerm=jeans, expectMatches=true, description=Men's category term}]
+2026-08-25 11:57:08.773 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - POST /api/searchProduct search_product=jeans
+2026-08-25 11:57:09.667 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsFromTheSpreadsheetReturnResults [{testCaseId=SEARCH_04, searchTerm=jeans, expectMatches=true, description=Men's category term}] (0.9s)
+2026-08-25 11:57:09.667 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsFromTheSpreadsheetReturnResults [{testCaseId=SEARCH_05, searchTerm=saree, expectMatches=true, description=Term with only a few matches}]
+2026-08-25 11:57:09.668 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - POST /api/searchProduct search_product=saree
+2026-08-25 11:57:09.672 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - PASS: storedUserDetailsMatchWhatWasRegistered (2.3s)
+2026-08-25 11:57:09.673 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - TEST START: updateAccountActuallyPersistsTheChange
+2026-08-25 11:57:09.673 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/createAccount for qa.auto.1787639229673.6@mailinator.com
+2026-08-25 11:57:10.388 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - PUT /api/updateAccount for qa.auto.1787639229673.6@mailinator.com
+2026-08-25 11:57:10.461 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsFromTheSpreadsheetReturnResults [{testCaseId=SEARCH_05, searchTerm=saree, expectMatches=true, description=Term with only a few matches}] (0.8s)
+2026-08-25 11:57:10.461 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsFromTheSpreadsheetReturnResults [{testCaseId=SEARCH_06, searchTerm=TOP, expectMatches=true, description=Search should be case-insensitive}]
+2026-08-25 11:57:10.461 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - POST /api/searchProduct search_product=TOP
+2026-08-25 11:57:11.083 [TestNG-test-API Tests-1] INFO  c.q.u.ExtentManager - Reading the account back to prove the update persisted
+2026-08-25 11:57:11.083 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - GET /api/getUserDetailByEmail?email=qa.auto.1787639229673.6@mailinator.com
+2026-08-25 11:57:11.683 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsFromTheSpreadsheetReturnResults [{testCaseId=SEARCH_06, searchTerm=TOP, expectMatches=true, description=Search should be case-insensitive}] (1.2s)
+2026-08-25 11:57:11.684 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - TEST START: searchWithoutTheRequiredParameterIsRejected
+2026-08-25 11:57:11.684 [TestNG-test-API Tests-2] INFO  c.q.a.c.BaseApiClient - POST /api/searchProduct with no search_product parameter
+2026-08-25 11:57:12.760 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - PASS: updateAccountActuallyPersistsTheChange (3.1s)
+2026-08-25 11:57:12.761 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - TEST START: userDetailForAnUnknownAddressDoesNotSucceed
+2026-08-25 11:57:12.761 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - GET /api/getUserDetailByEmail?email=qa.auto.1787639232761.7@mailinator.com
+2026-08-25 11:57:13.274 [TestNG-test-API Tests-2] INFO  c.q.l.TestListener - PASS: searchWithoutTheRequiredParameterIsRejected (1.6s)
+2026-08-25 11:57:13.672 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - PASS: userDetailForAnUnknownAddressDoesNotSucceed (0.9s)
+2026-08-25 11:57:13.672 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - TEST START: userDetailPayloadMatchesItsSchema
+2026-08-25 11:57:13.673 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/createAccount for qa.auto.1787639233673.8@mailinator.com
+2026-08-25 11:57:14.803 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - GET /api/getUserDetailByEmail?email=qa.auto.1787639233673.8@mailinator.com
+2026-08-25 11:57:16.360 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - PASS: userDetailPayloadMatchesItsSchema (2.7s)
+2026-08-25 11:57:16.361 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - TEST START: verifyLoginAcceptsCorrectCredentials
+2026-08-25 11:57:16.361 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/createAccount for qa.auto.1787639236361.9@mailinator.com
+2026-08-25 11:57:17.924 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/verifyLogin for qa.auto.1787639236361.9@mailinator.com
+2026-08-25 11:57:18.461 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - PASS: verifyLoginAcceptsCorrectCredentials (2.1s)
+2026-08-25 11:57:18.462 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - TEST START: verifyLoginRejectsUnknownCredentials
+2026-08-25 11:57:18.462 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/verifyLogin for qa.auto.1787639238462.10@mailinator.com
+2026-08-25 11:57:19.865 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - PASS: verifyLoginRejectsUnknownCredentials (1.4s)
+2026-08-25 11:57:19.866 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - TEST START: verifyLoginWithoutEmailIsABadRequest
+2026-08-25 11:57:19.870 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/verifyLogin with no email parameter
+2026-08-25 11:57:21.251 [TestNG-test-API Tests-1] INFO  c.q.l.TestListener - PASS: verifyLoginWithoutEmailIsABadRequest (1.4s)
+2026-08-25 11:57:21.251 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - DELETE /api/deleteAccount for qa.auto.1787639216805.1@mailinator.com
+2026-08-25 11:57:22.762 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - Cleanup delete for qa.auto.1787639216805.1@mailinator.com -> responseCode 200
+2026-08-25 11:57:22.762 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - DELETE /api/deleteAccount for qa.auto.1787639224474.3@mailinator.com
+2026-08-25 11:57:23.481 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - Cleanup delete for qa.auto.1787639224474.3@mailinator.com -> responseCode 200
+2026-08-25 11:57:23.482 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - DELETE /api/deleteAccount for qa.auto.1787639227356.5@mailinator.com
+2026-08-25 11:57:24.080 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - Cleanup delete for qa.auto.1787639227356.5@mailinator.com -> responseCode 200
+2026-08-25 11:57:24.081 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - DELETE /api/deleteAccount for qa.auto.1787639229673.6@mailinator.com
+2026-08-25 11:57:25.271 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - Cleanup delete for qa.auto.1787639229673.6@mailinator.com -> responseCode 200
+2026-08-25 11:57:25.271 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - DELETE /api/deleteAccount for qa.auto.1787639233673.8@mailinator.com
+2026-08-25 11:57:26.600 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - Cleanup delete for qa.auto.1787639233673.8@mailinator.com -> responseCode 200
+2026-08-25 11:57:26.600 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - DELETE /api/deleteAccount for qa.auto.1787639236361.9@mailinator.com
+2026-08-25 11:57:27.881 [TestNG-test-API Tests-1] INFO  c.q.a.c.BaseApiClient - Cleanup delete for qa.auto.1787639236361.9@mailinator.com -> responseCode 200
+2026-08-25 11:57:27.882 [main] INFO  c.q.l.TestListener - SUITE END: API Tests | passed=27 failed=0 skipped=0
+2026-08-25 11:57:27.978 [main] INFO  c.q.u.ExtentManager - ExtentReport written: /Users/sayan.ghosh/Documents/Oindrila/selenium-hybrid-framework/reports/ExtentReport_20260825_115654.html
+2026-08-25 11:57:27.987 [main] INFO  c.q.l.TestListener - SUITE START: UI Tests
+2026-08-25 11:57:27.989 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START SmokeTest.headerShowsSignupLoginForAnonymousVisitor [chrome, headless=true] =====
+2026-08-25 11:57:27.989 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START RegistrationTest.accountInformationFormIsPrefilledFromTheSignupBox [chrome, headless=true] =====
+2026-08-25 11:57:27.990 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:57:27.990 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 11:57:29.191 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:57:29.191 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:57:32.980 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: headerShowsSignupLoginForAnonymousVisitor
+2026-08-25 11:57:32.980 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Checking the header for an anonymous visitor
+2026-08-25 11:57:34.571 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: accountInformationFormIsPrefilledFromTheSignupBox
+2026-08-25 11:57:35.136 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Starting signup for qa.auto.1787639254573.11@mailinator.com
+2026-08-25 11:57:36.327 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: accountInformationFormIsPrefilledFromTheSignupBox (1.8s)
+2026-08-25 11:57:36.425 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   RegistrationTest.accountInformationFormIsPrefilledFromTheSignupBox =====
+2026-08-25 11:57:36.425 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START RegistrationTest.accountRegisteredThroughTheBrowserCanLogInAgain [chrome, headless=true] =====
+2026-08-25 11:57:36.425 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 11:57:37.377 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:57:38.222 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: headerShowsSignupLoginForAnonymousVisitor (5.2s)
+2026-08-25 11:57:38.314 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   SmokeTest.headerShowsSignupLoginForAnonymousVisitor =====
+2026-08-25 11:57:38.315 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START SmokeTest.homePageLoadsWithCorrectTitle [chrome, headless=true] =====
+2026-08-25 11:57:38.315 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:57:39.265 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:57:41.090 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: accountRegisteredThroughTheBrowserCanLogInAgain
+2026-08-25 11:57:41.090 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Registering qa.auto.1787639261090.12@mailinator.com through the form
+2026-08-25 11:57:41.810 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Starting signup for qa.auto.1787639261090.12@mailinator.com
+2026-08-25 11:57:42.722 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Completing account information for qa.auto.1787639261090.12@mailinator.com
+2026-08-25 11:57:43.092 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: homePageLoadsWithCorrectTitle
+2026-08-25 11:57:43.092 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Opening the home page
+2026-08-25 11:57:43.101 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: homePageLoadsWithCorrectTitle (0.0s)
+2026-08-25 11:57:43.190 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   SmokeTest.homePageLoadsWithCorrectTitle =====
+2026-08-25 11:57:43.191 [TestNG-test-UI Tests-1] INFO  c.q.a.c.BaseApiClient - POST /api/createAccount for qa.auto.1787639263191.13@mailinator.com
+2026-08-25 11:57:44.174 [TestNG-test-UI Tests-1] INFO  c.q.h.TestAccountManager - Test account created via API: qa.auto.1787639263191.13@mailinator.com
+2026-08-25 11:57:44.175 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.correctEmailWithWrongPasswordIsRejected [chrome, headless=true] =====
+2026-08-25 11:57:44.175 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:57:45.150 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:57:48.088 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: correctEmailWithWrongPasswordIsRejected
+2026-08-25 11:57:49.476 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639263191.13@mailinator.com
+2026-08-25 11:57:52.587 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Logging out, then logging back in with the same credentials
+2026-08-25 11:57:53.903 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639261090.12@mailinator.com
+2026-08-25 11:57:55.534 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: correctEmailWithWrongPasswordIsRejected (7.4s)
+2026-08-25 11:57:55.630 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.correctEmailWithWrongPasswordIsRejected =====
+2026-08-25 11:57:55.630 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.deleteAccountLinkIsOnlyVisibleWhenLoggedIn [chrome, headless=true] =====
+2026-08-25 11:57:55.631 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:57:56.569 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:57:59.633 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: deleteAccountLinkIsOnlyVisibleWhenLoggedIn
+2026-08-25 11:57:59.795 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: accountRegisteredThroughTheBrowserCanLogInAgain (18.7s)
+2026-08-25 11:58:05.934 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639263191.13@mailinator.com
+2026-08-25 11:58:11.297 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: deleteAccountLinkIsOnlyVisibleWhenLoggedIn (11.7s)
+2026-08-25 11:58:11.395 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.deleteAccountLinkIsOnlyVisibleWhenLoggedIn =====
+2026-08-25 11:58:11.396 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.emptyCredentialsAreBlockedByFieldValidation [chrome, headless=true] =====
+2026-08-25 11:58:11.396 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:58:11.778 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   RegistrationTest.accountRegisteredThroughTheBrowserCanLogInAgain =====
+2026-08-25 11:58:11.779 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START RegistrationTest.countryDropdownOffersTheSupportedCountries [chrome, headless=true] =====
+2026-08-25 11:58:11.779 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 11:58:12.352 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:58:12.606 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:58:15.784 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: emptyCredentialsAreBlockedByFieldValidation
+2026-08-25 11:58:15.992 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: countryDropdownOffersTheSupportedCountries
+2026-08-25 11:58:16.569 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Starting signup for qa.auto.1787639296569.14@mailinator.com
+2026-08-25 11:58:17.082 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Clicking Login without typing anything
+2026-08-25 11:58:17.131 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: emptyCredentialsAreBlockedByFieldValidation (1.3s)
+2026-08-25 11:58:17.174 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: countryDropdownOffersTheSupportedCountries (1.2s)
+2026-08-25 11:58:17.213 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.emptyCredentialsAreBlockedByFieldValidation =====
+2026-08-25 11:58:17.228 [TestNG-test-UI Tests-1] INFO  c.q.u.ExcelReader - Read 6 data row(s) from sheet 'Login'
+2026-08-25 11:58:17.228 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.invalidCredentialsAreRejected [chrome, headless=true] =====
+2026-08-25 11:58:17.228 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:58:17.260 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   RegistrationTest.countryDropdownOffersTheSupportedCountries =====
+2026-08-25 11:58:17.260 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START RegistrationTest.deletedAccountCanNoLongerLogIn [chrome, headless=true] =====
+2026-08-25 11:58:17.260 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 11:58:18.229 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:58:18.230 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:58:21.410 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: invalidCredentialsAreRejected [{testCaseId=LOGIN_NEG_01, email=not.registered.user@nowhere.test, password=Wrong@12345, expectedError=Your email or password is incorrect!, description=Unregistered e-mail address}]
+2026-08-25 11:58:21.413 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - LOGIN_NEG_01 - Unregistered e-mail address
+2026-08-25 11:58:21.720 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: deletedAccountCanNoLongerLogIn
+2026-08-25 11:58:21.980 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as not.registered.user@nowhere.test
+2026-08-25 11:58:22.478 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Starting signup for qa.auto.1787639301722.15@mailinator.com
+2026-08-25 11:58:22.965 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Completing account information for qa.auto.1787639301722.15@mailinator.com
+2026-08-25 11:58:27.975 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: invalidCredentialsAreRejected [{testCaseId=LOGIN_NEG_01, email=not.registered.user@nowhere.test, password=Wrong@12345, expectedError=Your email or password is incorrect!, description=Unregistered e-mail address}] (6.6s)
+2026-08-25 11:58:28.071 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.invalidCredentialsAreRejected =====
+2026-08-25 11:58:28.072 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.invalidCredentialsAreRejected [chrome, headless=true] =====
+2026-08-25 11:58:28.072 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:58:30.177 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:58:30.241 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Attempting to log in with the credentials of the deleted account
+2026-08-25 11:58:30.776 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639301722.15@mailinator.com
+2026-08-25 11:58:32.540 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: deletedAccountCanNoLongerLogIn (10.8s)
+2026-08-25 11:58:32.634 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   RegistrationTest.deletedAccountCanNoLongerLogIn =====
+2026-08-25 11:58:32.634 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START RegistrationTest.loginPageShowsBothForms [chrome, headless=true] =====
+2026-08-25 11:58:32.635 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 11:58:33.586 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:58:34.312 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: invalidCredentialsAreRejected [{testCaseId=LOGIN_NEG_02, email=test@test.com, password=DefinitelyWrong@999, expectedError=Your email or password is incorrect!, description=Registered address, wrong password}]
+2026-08-25 11:58:34.313 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - LOGIN_NEG_02 - Registered address, wrong password
+2026-08-25 11:58:34.885 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as test@test.com
+2026-08-25 11:58:36.432 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: loginPageShowsBothForms
+2026-08-25 11:58:37.092 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: loginPageShowsBothForms (0.7s)
+2026-08-25 11:58:37.182 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   RegistrationTest.loginPageShowsBothForms =====
+2026-08-25 11:58:37.183 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START RegistrationTest.newsletterAndOptinCheckboxesCanBeSelected [chrome, headless=true] =====
+2026-08-25 11:58:37.183 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 11:58:38.112 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:58:40.582 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: invalidCredentialsAreRejected [{testCaseId=LOGIN_NEG_02, email=test@test.com, password=DefinitelyWrong@999, expectedError=Your email or password is incorrect!, description=Registered address, wrong password}] (6.3s)
+2026-08-25 11:58:40.680 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: newsletterAndOptinCheckboxesCanBeSelected
+2026-08-25 11:58:40.682 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.invalidCredentialsAreRejected =====
+2026-08-25 11:58:40.683 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.invalidCredentialsAreRejected [chrome, headless=true] =====
+2026-08-25 11:58:40.683 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:58:41.623 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:58:41.765 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Starting signup for qa.auto.1787639320680.16@mailinator.com
+2026-08-25 11:58:42.680 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Completing account information for qa.auto.1787639320680.16@mailinator.com
+2026-08-25 11:58:43.129 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: newsletterAndOptinCheckboxesCanBeSelected (2.4s)
+2026-08-25 11:58:43.219 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   RegistrationTest.newsletterAndOptinCheckboxesCanBeSelected =====
+2026-08-25 11:58:43.220 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START RegistrationTest.signupWithAnAlreadyRegisteredEmailIsRejected [chrome, headless=true] =====
+2026-08-25 11:58:43.220 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 11:58:44.169 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:58:44.806 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: invalidCredentialsAreRejected [{testCaseId=LOGIN_NEG_03, email=admin@admin.com, password=admin, expectedError=Your email or password is incorrect!, description=Common default credentials must not work}]
+2026-08-25 11:58:44.806 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - LOGIN_NEG_03 - Common default credentials must not work
+2026-08-25 11:58:45.382 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as admin@admin.com
+2026-08-25 11:58:47.490 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: signupWithAnAlreadyRegisteredEmailIsRejected
+2026-08-25 11:58:47.495 [TestNG-test-UI Tests-2] INFO  c.q.a.c.BaseApiClient - POST /api/createAccount for qa.auto.1787639327494.17@mailinator.com
+2026-08-25 11:58:48.917 [TestNG-test-UI Tests-2] INFO  c.q.h.TestAccountManager - Test account created via API: qa.auto.1787639327494.17@mailinator.com
+2026-08-25 11:58:48.917 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Attempting to sign up again with qa.auto.1787639327494.17@mailinator.com
+2026-08-25 11:58:51.039 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: signupWithAnAlreadyRegisteredEmailIsRejected (3.5s)
+2026-08-25 11:58:51.130 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   RegistrationTest.signupWithAnAlreadyRegisteredEmailIsRejected =====
+2026-08-25 11:58:51.145 [TestNG-test-UI Tests-2] INFO  c.q.u.ExcelReader - Read 4 data row(s) from sheet 'Registration'
+2026-08-25 11:58:51.145 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START RegistrationTest.userCanRegisterAndThenDeleteTheAccount [chrome, headless=true] =====
+2026-08-25 11:58:51.145 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 11:58:51.392 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: invalidCredentialsAreRejected [{testCaseId=LOGIN_NEG_03, email=admin@admin.com, password=admin, expectedError=Your email or password is incorrect!, description=Common default credentials must not work}] (6.6s)
+2026-08-25 11:58:51.480 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.invalidCredentialsAreRejected =====
+2026-08-25 11:58:51.480 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.invalidCredentialsAreRejected [chrome, headless=true] =====
+2026-08-25 11:58:51.480 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:58:52.107 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:58:52.307 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:58:55.337 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: userCanRegisterAndThenDeleteTheAccount [{testCaseId=REG_01, title=Mr, name=Ananya, password=Qa@123456, birthDay=10, birthMonth=5, birthYear=1995, firstName=Ananya, lastName=Sen, company=Testing Labs, address1=12 Park Street, address2=Flat 4B, country=India, state=West Bengal, city=Kolkata, zipcode=700016, mobileNumber=9830012345, description=Indian address, Mr title}]
+2026-08-25 11:58:55.338 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Registering REG_01 - Indian address, Mr title
+2026-08-25 11:58:55.585 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: invalidCredentialsAreRejected [{testCaseId=LOGIN_NEG_04, email=user@example.com, password=' OR '1'='1, expectedError=Your email or password is incorrect!, description=SQL-injection style string is treated as a literal password}]
+2026-08-25 11:58:55.586 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - LOGIN_NEG_04 - SQL-injection style string is treated as a literal password
+2026-08-25 11:58:55.908 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Starting signup for qa.auto.1787639335337.18@mailinator.com
+2026-08-25 11:58:56.260 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as user@example.com
+2026-08-25 11:58:56.670 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Completing account information for qa.auto.1787639335337.18@mailinator.com
+2026-08-25 11:58:59.040 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Continuing to the home page as the newly registered user
+2026-08-25 11:59:02.090 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: invalidCredentialsAreRejected [{testCaseId=LOGIN_NEG_04, email=user@example.com, password=' OR '1'='1, expectedError=Your email or password is incorrect!, description=SQL-injection style string is treated as a literal password}] (6.5s)
+2026-08-25 11:59:02.185 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.invalidCredentialsAreRejected =====
+2026-08-25 11:59:02.186 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.invalidCredentialsAreRejected [chrome, headless=true] =====
+2026-08-25 11:59:02.186 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:59:02.355 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Deleting the account again so the practice site is left clean
+2026-08-25 11:59:02.803 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: userCanRegisterAndThenDeleteTheAccount [{testCaseId=REG_01, title=Mr, name=Ananya, password=Qa@123456, birthDay=10, birthMonth=5, birthYear=1995, firstName=Ananya, lastName=Sen, company=Testing Labs, address1=12 Park Street, address2=Flat 4B, country=India, state=West Bengal, city=Kolkata, zipcode=700016, mobileNumber=9830012345, description=Indian address, Mr title}] (7.5s)
+2026-08-25 11:59:02.893 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   RegistrationTest.userCanRegisterAndThenDeleteTheAccount =====
+2026-08-25 11:59:02.893 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START RegistrationTest.userCanRegisterAndThenDeleteTheAccount [chrome, headless=true] =====
+2026-08-25 11:59:02.894 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 11:59:03.136 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:59:03.782 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:59:06.395 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: invalidCredentialsAreRejected [{testCaseId=LOGIN_NEG_05, email=UPPERCASE@NOWHERE.TEST, password=Wrong@12345, expectedError=Your email or password is incorrect!, description=Upper-case unregistered address}]
+2026-08-25 11:59:06.396 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - LOGIN_NEG_05 - Upper-case unregistered address
+2026-08-25 11:59:07.161 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as UPPERCASE@NOWHERE.TEST
+2026-08-25 11:59:07.257 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: userCanRegisterAndThenDeleteTheAccount [{testCaseId=REG_02, title=Mrs, name=Priya, password=Qa@987654, birthDay=28, birthMonth=12, birthYear=1990, firstName=Priya, lastName=Nair, company=QA Solutions, address1=88 MG Road, address2=Suite 12, country=India, state=Karnataka, city=Bengaluru, zipcode=560001, mobileNumber=9845067890, description=Indian address, Mrs title}]
+2026-08-25 11:59:07.257 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Registering REG_02 - Indian address, Mrs title
+2026-08-25 11:59:07.807 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Starting signup for qa.auto.1787639347257.19@mailinator.com
+2026-08-25 11:59:08.333 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Completing account information for qa.auto.1787639347257.19@mailinator.com
+2026-08-25 11:59:10.802 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Continuing to the home page as the newly registered user
+2026-08-25 11:59:13.070 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Deleting the account again so the practice site is left clean
+2026-08-25 11:59:13.097 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: invalidCredentialsAreRejected [{testCaseId=LOGIN_NEG_05, email=UPPERCASE@NOWHERE.TEST, password=Wrong@12345, expectedError=Your email or password is incorrect!, description=Upper-case unregistered address}] (6.7s)
+2026-08-25 11:59:13.195 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.invalidCredentialsAreRejected =====
+2026-08-25 11:59:13.196 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.invalidCredentialsAreRejected [chrome, headless=true] =====
+2026-08-25 11:59:13.196 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:59:13.601 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: userCanRegisterAndThenDeleteTheAccount [{testCaseId=REG_02, title=Mrs, name=Priya, password=Qa@987654, birthDay=28, birthMonth=12, birthYear=1990, firstName=Priya, lastName=Nair, company=QA Solutions, address1=88 MG Road, address2=Suite 12, country=India, state=Karnataka, city=Bengaluru, zipcode=560001, mobileNumber=9845067890, description=Indian address, Mrs title}] (6.3s)
+2026-08-25 11:59:13.691 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   RegistrationTest.userCanRegisterAndThenDeleteTheAccount =====
+2026-08-25 11:59:13.691 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START RegistrationTest.userCanRegisterAndThenDeleteTheAccount [chrome, headless=true] =====
+2026-08-25 11:59:13.691 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 11:59:14.143 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:59:14.549 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:59:16.989 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: invalidCredentialsAreRejected [{testCaseId=LOGIN_NEG_06, email=longpass@nowhere.test, password=ThisPasswordIsDeliberatelyLongToCheckTheFieldHasNoUpperBoundProblem1234567890, expectedError=Your email or password is incorrect!, description=A very long password is rejected cleanly rather than breaking the form}]
+2026-08-25 11:59:16.990 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - LOGIN_NEG_06 - A very long password is rejected cleanly rather than breaking the form
+2026-08-25 11:59:17.568 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: userCanRegisterAndThenDeleteTheAccount [{testCaseId=REG_03, title=Mr, name=Daniel, password=Qa@555111, birthDay=1, birthMonth=1, birthYear=1980, firstName=Daniel, lastName=Cohen, company=Global QA Inc, address1=5 Rothschild Blvd, address2=Level 3, country=Israel, state=Tel Aviv, city=Tel Aviv, zipcode=6688101, mobileNumber=9812345678, description=Non-Indian country, boundary date 1 January}]
+2026-08-25 11:59:17.568 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Registering REG_03 - Non-Indian country, boundary date 1 January
+2026-08-25 11:59:17.649 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as longpass@nowhere.test
+2026-08-25 11:59:18.300 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Starting signup for qa.auto.1787639357568.20@mailinator.com
+2026-08-25 11:59:19.183 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Completing account information for qa.auto.1787639357568.20@mailinator.com
+2026-08-25 11:59:22.497 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Continuing to the home page as the newly registered user
+2026-08-25 11:59:23.392 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: invalidCredentialsAreRejected [{testCaseId=LOGIN_NEG_06, email=longpass@nowhere.test, password=ThisPasswordIsDeliberatelyLongToCheckTheFieldHasNoUpperBoundProblem1234567890, expectedError=Your email or password is incorrect!, description=A very long password is rejected cleanly rather than breaking the form}] (6.4s)
+2026-08-25 11:59:23.497 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.invalidCredentialsAreRejected =====
+2026-08-25 11:59:23.497 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.logoutReturnsTheUserToTheLoginPage [chrome, headless=true] =====
+2026-08-25 11:59:23.497 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:59:24.466 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:59:24.937 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Deleting the account again so the practice site is left clean
+2026-08-25 11:59:25.698 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: userCanRegisterAndThenDeleteTheAccount [{testCaseId=REG_03, title=Mr, name=Daniel, password=Qa@555111, birthDay=1, birthMonth=1, birthYear=1980, firstName=Daniel, lastName=Cohen, company=Global QA Inc, address1=5 Rothschild Blvd, address2=Level 3, country=Israel, state=Tel Aviv, city=Tel Aviv, zipcode=6688101, mobileNumber=9812345678, description=Non-Indian country, boundary date 1 January}] (8.1s)
+2026-08-25 11:59:25.779 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   RegistrationTest.userCanRegisterAndThenDeleteTheAccount =====
+2026-08-25 11:59:25.779 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START RegistrationTest.userCanRegisterAndThenDeleteTheAccount [chrome, headless=true] =====
+2026-08-25 11:59:25.779 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 11:59:26.728 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:59:27.621 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: logoutReturnsTheUserToTheLoginPage
+2026-08-25 11:59:28.370 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639263191.13@mailinator.com
+2026-08-25 11:59:30.612 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: userCanRegisterAndThenDeleteTheAccount [{testCaseId=REG_04, title=Mrs, name=Sophie, password=Qa@777222, birthDay=31, birthMonth=12, birthYear=2003, firstName=Sophie, lastName=Martin, company=Maple Test Co, address1=900 Bay Street, address2=Unit 21, country=Canada, state=Ontario, city=Toronto, zipcode=M5S2C6, mobileNumber=9876543210, description=Boundary date 31 December, youngest allowed birth year}]
+2026-08-25 11:59:30.615 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Registering REG_04 - Boundary date 31 December, youngest allowed birth year
+2026-08-25 11:59:32.102 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Starting signup for qa.auto.1787639370615.21@mailinator.com
+2026-08-25 11:59:32.800 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Completing account information for qa.auto.1787639370615.21@mailinator.com
+2026-08-25 11:59:33.246 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Logging out
+2026-08-25 11:59:36.283 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Continuing to the home page as the newly registered user
+2026-08-25 11:59:39.429 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: logoutReturnsTheUserToTheLoginPage (11.8s)
+2026-08-25 11:59:39.537 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.logoutReturnsTheUserToTheLoginPage =====
+2026-08-25 11:59:39.537 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.malformedEmailIsBlockedByFieldValidation [chrome, headless=true] =====
+2026-08-25 11:59:39.537 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:59:40.496 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:59:44.912 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: malformedEmailIsBlockedByFieldValidation
+2026-08-25 11:59:45.465 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as not-an-email-address
+2026-08-25 11:59:50.793 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: malformedEmailIsBlockedByFieldValidation (5.9s)
+2026-08-25 11:59:50.894 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.malformedEmailIsBlockedByFieldValidation =====
+2026-08-25 11:59:50.894 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.passwordIsCaseSensitive [chrome, headless=true] =====
+2026-08-25 11:59:50.894 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 11:59:51.853 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 11:59:53.014 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Deleting the account again so the practice site is left clean
+2026-08-25 11:59:54.296 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: userCanRegisterAndThenDeleteTheAccount [{testCaseId=REG_04, title=Mrs, name=Sophie, password=Qa@777222, birthDay=31, birthMonth=12, birthYear=2003, firstName=Sophie, lastName=Martin, company=Maple Test Co, address1=900 Bay Street, address2=Unit 21, country=Canada, state=Ontario, city=Toronto, zipcode=M5S2C6, mobileNumber=9876543210, description=Boundary date 31 December, youngest allowed birth year}] (23.7s)
+2026-08-25 11:59:55.668 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: passwordIsCaseSensitive
+2026-08-25 11:59:56.241 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639263191.13@mailinator.com
+2026-08-25 12:00:01.253 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   RegistrationTest.userCanRegisterAndThenDeleteTheAccount =====
+2026-08-25 12:00:01.255 [TestNG-test-UI Tests-2] INFO  c.q.a.c.BaseApiClient - DELETE /api/deleteAccount for qa.auto.1787639327494.17@mailinator.com
+2026-08-25 12:00:02.165 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: passwordIsCaseSensitive (6.5s)
+2026-08-25 12:00:02.272 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.passwordIsCaseSensitive =====
+2026-08-25 12:00:02.272 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.passwordWithSurroundingSpacesIsRejected [chrome, headless=true] =====
+2026-08-25 12:00:02.272 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:00:02.515 [TestNG-test-UI Tests-2] INFO  c.q.a.c.BaseApiClient - Cleanup delete for qa.auto.1787639327494.17@mailinator.com -> responseCode 200
+2026-08-25 12:00:02.515 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.allProductsPageListsTheCatalogue [chrome, headless=true] =====
+2026-08-25 12:00:02.515 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:00:03.239 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:00:03.361 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:00:07.098 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: allProductsPageListsTheCatalogue
+2026-08-25 12:00:07.099 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:00:07.198 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: passwordWithSurroundingSpacesIsRejected
+2026-08-25 12:00:07.779 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639263191.13@mailinator.com
+2026-08-25 12:00:09.413 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: allProductsPageListsTheCatalogue (2.3s)
+2026-08-25 12:00:09.512 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.allProductsPageListsTheCatalogue =====
+2026-08-25 12:00:09.513 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.babyhugBrandListsItsOwnProducts [chrome, headless=true] =====
+2026-08-25 12:00:09.513 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:00:10.469 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:00:14.035 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: passwordWithSurroundingSpacesIsRejected (6.8s)
+2026-08-25 12:00:14.077 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: babyhugBrandListsItsOwnProducts
+2026-08-25 12:00:14.077 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/brand_products/Babyhug
+2026-08-25 12:00:14.137 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.passwordWithSurroundingSpacesIsRejected =====
+2026-08-25 12:00:14.137 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.registeredUserCanLogIn [chrome, headless=true] =====
+2026-08-25 12:00:14.137 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:00:15.088 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:00:15.436 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: babyhugBrandListsItsOwnProducts (1.4s)
+2026-08-25 12:00:15.535 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.babyhugBrandListsItsOwnProducts =====
+2026-08-25 12:00:15.535 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.brandSidebarListsExpectedBrands [chrome, headless=true] =====
+2026-08-25 12:00:15.535 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:00:16.475 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:00:17.322 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: registeredUserCanLogIn
+2026-08-25 12:00:17.325 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Logging in as qa.auto.1787639263191.13@mailinator.com
+2026-08-25 12:00:18.966 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639263191.13@mailinator.com
+2026-08-25 12:00:20.764 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: brandSidebarListsExpectedBrands
+2026-08-25 12:00:20.768 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:00:25.019 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: brandSidebarListsExpectedBrands (4.3s)
+2026-08-25 12:00:25.114 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.brandSidebarListsExpectedBrands =====
+2026-08-25 12:00:25.115 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.categoryCanBeReachedByClickingTheAccordion [chrome, headless=true] =====
+2026-08-25 12:00:25.115 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:00:26.085 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:00:30.258 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: registeredUserCanLogIn (12.9s)
+2026-08-25 12:00:30.363 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.registeredUserCanLogIn =====
+2026-08-25 12:00:30.364 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START LoginLogoutTest.sessionIsClearedAfterLogout [chrome, headless=true] =====
+2026-08-25 12:00:30.364 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:00:31.289 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: categoryCanBeReachedByClickingTheAccordion
+2026-08-25 12:00:31.292 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:00:31.308 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:00:36.267 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: sessionIsClearedAfterLogout
+2026-08-25 12:00:37.309 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639263191.13@mailinator.com
+2026-08-25 12:00:40.719 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Expanding 'Women' and choosing 'Dress'
+2026-08-25 12:00:42.463 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: categoryCanBeReachedByClickingTheAccordion (11.2s)
+2026-08-25 12:00:42.556 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.categoryCanBeReachedByClickingTheAccordion =====
+2026-08-25 12:00:42.556 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.everyListedProductHasANameAndAPrice [chrome, headless=true] =====
+2026-08-25 12:00:42.556 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:00:43.532 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:00:47.094 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: everyListedProductHasANameAndAPrice
+2026-08-25 12:00:47.098 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:00:49.016 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Navigating to the cart and back to confirm the session is really gone
+2026-08-25 12:00:49.017 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/view_cart
+2026-08-25 12:00:52.474 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: everyListedProductHasANameAndAPrice (5.4s)
+2026-08-25 12:00:52.556 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.everyListedProductHasANameAndAPrice =====
+2026-08-25 12:00:52.557 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.menTshirtsCategoryCanBeOpened [chrome, headless=true] =====
+2026-08-25 12:00:52.557 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:00:53.511 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:00:54.544 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: sessionIsClearedAfterLogout (18.3s)
+2026-08-25 12:00:54.649 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   LoginLogoutTest.sessionIsClearedAfterLogout =====
+2026-08-25 12:00:54.649 [TestNG-test-UI Tests-1] INFO  c.q.a.c.BaseApiClient - DELETE /api/deleteAccount for qa.auto.1787639263191.13@mailinator.com
+2026-08-25 12:00:56.073 [TestNG-test-UI Tests-1] INFO  c.q.a.c.BaseApiClient - Cleanup delete for qa.auto.1787639263191.13@mailinator.com -> responseCode 200
+2026-08-25 12:00:56.074 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ProductDetailsTest.continueShoppingReturnsToTheProduct [chrome, headless=true] =====
+2026-08-25 12:00:56.074 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:00:57.052 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:00:57.057 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: menTshirtsCategoryCanBeOpened
+2026-08-25 12:00:57.058 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/category_products/3
+2026-08-25 12:00:58.244 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: menTshirtsCategoryCanBeOpened (1.2s)
+2026-08-25 12:00:58.341 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.menTshirtsCategoryCanBeOpened =====
+2026-08-25 12:00:58.342 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.productsCanBeFilteredByBrand [chrome, headless=true] =====
+2026-08-25 12:00:58.342 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:00:59.291 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:00:59.620 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: continueShoppingReturnsToTheProduct
+2026-08-25 12:00:59.620 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:01:02.492 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: continueShoppingReturnsToTheProduct (2.9s)
+2026-08-25 12:01:02.584 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ProductDetailsTest.continueShoppingReturnsToTheProduct =====
+2026-08-25 12:01:02.584 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ProductDetailsTest.listingAndDetailPageAgreeOnNameAndPrice [chrome, headless=true] =====
+2026-08-25 12:01:02.584 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:01:03.137 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: productsCanBeFilteredByBrand
+2026-08-25 12:01:03.140 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:01:03.544 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:04.824 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Selecting the Polo brand
+2026-08-25 12:01:06.399 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: productsCanBeFilteredByBrand (3.3s)
+2026-08-25 12:01:06.489 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.productsCanBeFilteredByBrand =====
+2026-08-25 12:01:06.490 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.searchIsCaseInsensitive [chrome, headless=true] =====
+2026-08-25 12:01:06.490 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:01:06.809 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: listingAndDetailPageAgreeOnNameAndPrice
+2026-08-25 12:01:06.812 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:01:07.437 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:08.748 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Listing shows 'Blue Top' at Rs. 500
+2026-08-25 12:01:10.731 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: listingAndDetailPageAgreeOnNameAndPrice (3.9s)
+2026-08-25 12:01:10.748 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: searchIsCaseInsensitive
+2026-08-25 12:01:10.748 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:01:10.829 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ProductDetailsTest.listingAndDetailPageAgreeOnNameAndPrice =====
+2026-08-25 12:01:10.830 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ProductDetailsTest.nonExistentProductDoesNotRenderProductInformation [chrome, headless=true] =====
+2026-08-25 12:01:10.830 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:01:11.772 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:14.149 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: nonExistentProductDoesNotRenderProductInformation
+2026-08-25 12:01:14.151 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/99999
+2026-08-25 12:01:15.084 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: nonExistentProductDoesNotRenderProductInformation (0.9s)
+2026-08-25 12:01:15.184 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ProductDetailsTest.nonExistentProductDoesNotRenderProductInformation =====
+2026-08-25 12:01:15.185 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ProductDetailsTest.productDetailsShowAllPublishedAttributes [chrome, headless=true] =====
+2026-08-25 12:01:15.185 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:01:15.197 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Searching products for 'top'
+2026-08-25 12:01:16.117 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:17.133 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:01:19.534 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: productDetailsShowAllPublishedAttributes
+2026-08-25 12:01:19.534 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:01:20.331 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Searching products for 'TOP'
+2026-08-25 12:01:20.546 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: productDetailsShowAllPublishedAttributes (1.0s)
+2026-08-25 12:01:20.644 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ProductDetailsTest.productDetailsShowAllPublishedAttributes =====
+2026-08-25 12:01:20.645 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ProductDetailsTest.quantityCanBeIncreasedBeforeAddingToCart [chrome, headless=true] =====
+2026-08-25 12:01:20.645 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:01:21.592 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:22.621 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: searchIsCaseInsensitive (11.9s)
+2026-08-25 12:01:22.720 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.searchIsCaseInsensitive =====
+2026-08-25 12:01:22.721 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.searchNarrowsTheCatalogue [chrome, headless=true] =====
+2026-08-25 12:01:22.721 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:01:23.646 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:24.900 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: quantityCanBeIncreasedBeforeAddingToCart
+2026-08-25 12:01:24.900 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:01:26.364 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: searchNarrowsTheCatalogue
+2026-08-25 12:01:26.364 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:01:28.185 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: quantityCanBeIncreasedBeforeAddingToCart (3.3s)
+2026-08-25 12:01:28.289 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ProductDetailsTest.quantityCanBeIncreasedBeforeAddingToCart =====
+2026-08-25 12:01:28.290 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ProductDetailsTest.quantityDefaultsToOne [chrome, headless=true] =====
+2026-08-25 12:01:28.290 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:01:28.307 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Searching products for 'saree'
+2026-08-25 12:01:29.221 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:29.658 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: searchNarrowsTheCatalogue (3.3s)
+2026-08-25 12:01:29.756 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.searchNarrowsTheCatalogue =====
+2026-08-25 12:01:29.769 [TestNG-test-UI Tests-2] INFO  c.q.u.ExcelReader - Read 8 data row(s) from sheet 'Search'
+2026-08-25 12:01:29.769 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.searchTermsThatShouldMatchReturnResults [chrome, headless=true] =====
+2026-08-25 12:01:29.769 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:01:30.697 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:32.669 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: quantityDefaultsToOne
+2026-08-25 12:01:32.670 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:01:34.185 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsThatShouldMatchReturnResults [{testCaseId=SEARCH_01, searchTerm=top, expectMatches=true, description=Common term present in several product names}]
+2026-08-25 12:01:34.188 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - SEARCH_01 - searching for 'top'
+2026-08-25 12:01:34.188 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:01:34.284 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: quantityDefaultsToOne (1.6s)
+2026-08-25 12:01:34.390 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ProductDetailsTest.quantityDefaultsToOne =====
+2026-08-25 12:01:34.390 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ProductDetailsTest.reviewCanBeSubmitted [chrome, headless=true] =====
+2026-08-25 12:01:34.390 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:01:35.348 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:36.836 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Searching products for 'top'
+2026-08-25 12:01:39.095 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsThatShouldMatchReturnResults [{testCaseId=SEARCH_01, searchTerm=top, expectMatches=true, description=Common term present in several product names}] (4.9s)
+2026-08-25 12:01:39.189 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.searchTermsThatShouldMatchReturnResults =====
+2026-08-25 12:01:39.190 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.searchTermsThatShouldMatchReturnResults [chrome, headless=true] =====
+2026-08-25 12:01:39.190 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:01:39.497 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: reviewCanBeSubmitted
+2026-08-25 12:01:39.500 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:01:40.124 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:40.536 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Submitting a review
+2026-08-25 12:01:40.541 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Submitting a review as qa.auto.1787639500536.22@mailinator.com
+2026-08-25 12:01:41.240 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: reviewCanBeSubmitted (1.7s)
+2026-08-25 12:01:41.336 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ProductDetailsTest.reviewCanBeSubmitted =====
+2026-08-25 12:01:41.336 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ProductDetailsTest.reviewFormIsAvailable [chrome, headless=true] =====
+2026-08-25 12:01:41.336 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:01:42.282 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:42.815 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsThatShouldMatchReturnResults [{testCaseId=SEARCH_02, searchTerm=dress, expectMatches=true, description=Category-style term}]
+2026-08-25 12:01:42.815 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - SEARCH_02 - searching for 'dress'
+2026-08-25 12:01:42.815 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:01:44.733 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: reviewFormIsAvailable
+2026-08-25 12:01:44.733 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:01:44.733 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Searching products for 'dress'
+2026-08-25 12:01:46.451 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: reviewFormIsAvailable (1.7s)
+2026-08-25 12:01:46.548 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ProductDetailsTest.reviewFormIsAvailable =====
+2026-08-25 12:01:46.548 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ProductDetailsTest.reviewWithAnEmptyMessageIsNotAccepted [chrome, headless=true] =====
+2026-08-25 12:01:46.548 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:01:46.718 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsThatShouldMatchReturnResults [{testCaseId=SEARCH_02, searchTerm=dress, expectMatches=true, description=Category-style term}] (3.9s)
+2026-08-25 12:01:46.800 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.searchTermsThatShouldMatchReturnResults =====
+2026-08-25 12:01:46.801 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.searchTermsThatShouldMatchReturnResults [chrome, headless=true] =====
+2026-08-25 12:01:46.801 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:01:47.532 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:47.647 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:50.507 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: reviewWithAnEmptyMessageIsNotAccepted
+2026-08-25 12:01:50.508 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:01:50.961 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsThatShouldMatchReturnResults [{testCaseId=SEARCH_03, searchTerm=tshirt, expectMatches=true, description=Compound word without a space}]
+2026-08-25 12:01:50.963 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - SEARCH_03 - searching for 'tshirt'
+2026-08-25 12:01:50.964 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:01:51.609 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Submitting a review as qa.auto.1787639511609.23@mailinator.com
+2026-08-25 12:01:52.726 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Searching products for 'tshirt'
+2026-08-25 12:01:54.851 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsThatShouldMatchReturnResults [{testCaseId=SEARCH_03, searchTerm=tshirt, expectMatches=true, description=Compound word without a space}] (3.9s)
+2026-08-25 12:01:54.948 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.searchTermsThatShouldMatchReturnResults =====
+2026-08-25 12:01:54.948 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.searchTermsThatShouldMatchReturnResults [chrome, headless=true] =====
+2026-08-25 12:01:54.948 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:01:55.905 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:57.528 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: reviewWithAnEmptyMessageIsNotAccepted (7.0s)
+2026-08-25 12:01:57.628 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ProductDetailsTest.reviewWithAnEmptyMessageIsNotAccepted =====
+2026-08-25 12:01:57.629 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START CartTest.anonymousVisitorIsAskedToRegisterOrLoginAtCheckout [chrome, headless=true] =====
+2026-08-25 12:01:57.629 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:01:58.589 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:01:59.881 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsThatShouldMatchReturnResults [{testCaseId=SEARCH_04, searchTerm=jeans, expectMatches=true, description=Men's category term}]
+2026-08-25 12:01:59.881 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - SEARCH_04 - searching for 'jeans'
+2026-08-25 12:01:59.881 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:02:02.190 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: anonymousVisitorIsAskedToRegisterOrLoginAtCheckout
+2026-08-25 12:02:02.192 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Filling a cart while staying logged out
+2026-08-25 12:02:02.192 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:02:05.319 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Searching products for 'jeans'
+2026-08-25 12:02:07.229 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsThatShouldMatchReturnResults [{testCaseId=SEARCH_04, searchTerm=jeans, expectMatches=true, description=Men's category term}] (7.3s)
+2026-08-25 12:02:07.325 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.searchTermsThatShouldMatchReturnResults =====
+2026-08-25 12:02:07.325 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.searchTermsThatShouldMatchReturnResults [chrome, headless=true] =====
+2026-08-25 12:02:07.325 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:02:08.280 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:02:09.086 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Clicking 'Proceed To Checkout' as an anonymous visitor
+2026-08-25 12:02:09.122 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: anonymousVisitorIsAskedToRegisterOrLoginAtCheckout (6.9s)
+2026-08-25 12:02:09.221 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   CartTest.anonymousVisitorIsAskedToRegisterOrLoginAtCheckout =====
+2026-08-25 12:02:09.222 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START CartTest.cartIsEmptyForABrandNewSession [chrome, headless=true] =====
+2026-08-25 12:02:09.222 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:02:10.185 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:02:11.811 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsThatShouldMatchReturnResults [{testCaseId=SEARCH_05, searchTerm=saree, expectMatches=true, description=Term with only a few matches}]
+2026-08-25 12:02:11.815 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - SEARCH_05 - searching for 'saree'
+2026-08-25 12:02:11.815 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:02:13.914 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: cartIsEmptyForABrandNewSession
+2026-08-25 12:02:13.915 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Opening the cart without adding anything first
+2026-08-25 12:02:13.915 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/view_cart
+2026-08-25 12:02:14.664 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Searching products for 'saree'
+2026-08-25 12:02:14.719 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: cartIsEmptyForABrandNewSession (0.8s)
+2026-08-25 12:02:14.813 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   CartTest.cartIsEmptyForABrandNewSession =====
+2026-08-25 12:02:14.813 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START CartTest.cartSurvivesNavigatingAwayAndBack [chrome, headless=true] =====
+2026-08-25 12:02:14.813 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:02:15.778 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:02:16.471 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsThatShouldMatchReturnResults [{testCaseId=SEARCH_05, searchTerm=saree, expectMatches=true, description=Term with only a few matches}] (4.7s)
+2026-08-25 12:02:16.556 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.searchTermsThatShouldMatchReturnResults =====
+2026-08-25 12:02:16.556 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.searchTermsThatShouldMatchReturnResults [chrome, headless=true] =====
+2026-08-25 12:02:16.557 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:02:17.518 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:02:18.874 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: cartSurvivesNavigatingAwayAndBack
+2026-08-25 12:02:18.874 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Adding a product, then browsing away to the home page
+2026-08-25 12:02:18.874 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:02:20.941 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsThatShouldMatchReturnResults [{testCaseId=SEARCH_06, searchTerm=TOP, expectMatches=true, description=Search should be case-insensitive}]
+2026-08-25 12:02:20.941 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - SEARCH_06 - searching for 'TOP'
+2026-08-25 12:02:20.942 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:02:22.691 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Searching products for 'TOP'
+2026-08-25 12:02:24.515 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Returning to the cart through the header link
+2026-08-25 12:02:24.617 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsThatShouldMatchReturnResults [{testCaseId=SEARCH_06, searchTerm=TOP, expectMatches=true, description=Search should be case-insensitive}] (3.7s)
+2026-08-25 12:02:24.711 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.searchTermsThatShouldMatchReturnResults =====
+2026-08-25 12:02:24.721 [TestNG-test-UI Tests-2] INFO  c.q.u.ExcelReader - Read 8 data row(s) from sheet 'Search'
+2026-08-25 12:02:24.721 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.searchTermsThatShouldNotMatchReturnNothing [chrome, headless=true] =====
+2026-08-25 12:02:24.721 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:02:25.707 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:02:28.884 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsThatShouldNotMatchReturnNothing [{testCaseId=SEARCH_07, searchTerm=zzzznotaproduct, expectMatches=false, description=Nonsense term must return no results}]
+2026-08-25 12:02:28.885 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - SEARCH_07 - searching for 'zzzznotaproduct'
+2026-08-25 12:02:28.888 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:02:30.516 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: cartSurvivesNavigatingAwayAndBack (11.6s)
+2026-08-25 12:02:30.611 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   CartTest.cartSurvivesNavigatingAwayAndBack =====
+2026-08-25 12:02:30.611 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START CartTest.cartTotalEqualsTheSumOfTheLineTotals [chrome, headless=true] =====
+2026-08-25 12:02:30.611 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:02:30.790 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Searching products for 'zzzznotaproduct'
+2026-08-25 12:02:31.372 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsThatShouldNotMatchReturnNothing [{testCaseId=SEARCH_07, searchTerm=zzzznotaproduct, expectMatches=false, description=Nonsense term must return no results}] (2.5s)
+2026-08-25 12:02:31.469 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.searchTermsThatShouldNotMatchReturnNothing =====
+2026-08-25 12:02:31.470 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.searchTermsThatShouldNotMatchReturnNothing [chrome, headless=true] =====
+2026-08-25 12:02:31.470 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:02:31.570 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:02:32.408 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:02:35.242 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: cartTotalEqualsTheSumOfTheLineTotals
+2026-08-25 12:02:35.243 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Building a cart with two different products
+2026-08-25 12:02:35.244 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:02:36.092 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: searchTermsThatShouldNotMatchReturnNothing [{testCaseId=SEARCH_08, searchTerm=!@#$%, expectMatches=false, description=Special characters must not break the page}]
+2026-08-25 12:02:36.093 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - SEARCH_08 - searching for '!@#$%'
+2026-08-25 12:02:36.093 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:02:38.334 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Searching products for '!@#$%'
+2026-08-25 12:02:39.475 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: searchTermsThatShouldNotMatchReturnNothing [{testCaseId=SEARCH_08, searchTerm=!@#$%, expectMatches=false, description=Special characters must not break the page}] (3.4s)
+2026-08-25 12:02:39.575 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.searchTermsThatShouldNotMatchReturnNothing =====
+2026-08-25 12:02:39.575 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START ProductSearchTest.womenDressCategoryCanBeOpened [chrome, headless=true] =====
+2026-08-25 12:02:39.575 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:02:40.545 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:02:40.663 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Line totals are 500 and 400
+2026-08-25 12:02:40.709 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: cartTotalEqualsTheSumOfTheLineTotals (5.5s)
+2026-08-25 12:02:40.800 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   CartTest.cartTotalEqualsTheSumOfTheLineTotals =====
+2026-08-25 12:02:40.801 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START CartTest.continueShoppingKeepsTheUserOnTheProductsPage [chrome, headless=true] =====
+2026-08-25 12:02:40.801 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:02:41.730 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:02:43.801 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: continueShoppingKeepsTheUserOnTheProductsPage
+2026-08-25 12:02:43.801 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Adding a product so the confirmation popup appears
+2026-08-25 12:02:43.801 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:02:45.397 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: womenDressCategoryCanBeOpened
+2026-08-25 12:02:45.397 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/category_products/1
+2026-08-25 12:02:46.320 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Dismissing the popup with 'Continue Shopping'
+2026-08-25 12:02:46.498 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: womenDressCategoryCanBeOpened (1.1s)
+2026-08-25 12:02:46.595 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   ProductSearchTest.womenDressCategoryCanBeOpened =====
+2026-08-25 12:02:46.596 [TestNG-test-UI Tests-2] INFO  c.q.a.c.BaseApiClient - POST /api/createAccount for qa.auto.1787639566595.24@mailinator.com
+2026-08-25 12:02:47.759 [TestNG-test-UI Tests-2] INFO  c.q.h.TestAccountManager - Test account created via API: qa.auto.1787639566595.24@mailinator.com
+2026-08-25 12:02:47.759 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START CheckoutOrderTest.anonymousVisitorSeesNoCustomerDetailsAtCheckout [chrome, headless=true] =====
+2026-08-25 12:02:47.759 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:02:48.725 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:02:51.309 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: anonymousVisitorSeesNoCustomerDetailsAtCheckout
+2026-08-25 12:02:51.310 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/checkout
+2026-08-25 12:02:51.434 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: continueShoppingKeepsTheUserOnTheProductsPage (7.6s)
+2026-08-25 12:02:51.531 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   CartTest.continueShoppingKeepsTheUserOnTheProductsPage =====
+2026-08-25 12:02:51.532 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START CartTest.lineTotalEqualsUnitPriceTimesQuantity [chrome, headless=true] =====
+2026-08-25 12:02:51.532 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:02:52.478 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:02:53.404 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: anonymousVisitorSeesNoCustomerDetailsAtCheckout (2.1s)
+2026-08-25 12:02:53.496 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   CheckoutOrderTest.anonymousVisitorSeesNoCustomerDetailsAtCheckout =====
+2026-08-25 12:02:53.496 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START CheckoutOrderTest.cartIsEmptyAfterAnOrderIsPlaced [chrome, headless=true] =====
+2026-08-25 12:02:53.496 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:02:54.425 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:02:55.856 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: lineTotalEqualsUnitPriceTimesQuantity
+2026-08-25 12:02:55.859 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Adding one product so there is a line to check
+2026-08-25 12:02:55.859 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:02:57.666 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: cartIsEmptyAfterAnOrderIsPlaced
+2026-08-25 12:02:58.593 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639566595.24@mailinator.com
+2026-08-25 12:03:00.910 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Cart shows unit price 500 x quantity 1 and a line total of 500
+2026-08-25 12:03:00.929 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: lineTotalEqualsUnitPriceTimesQuantity (5.1s)
+2026-08-25 12:03:01.019 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   CartTest.lineTotalEqualsUnitPriceTimesQuantity =====
+2026-08-25 12:03:01.020 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START CartTest.quantityChosenOnDetailsPageIsCarriedIntoTheCart [chrome, headless=true] =====
+2026-08-25 12:03:01.020 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:03:01.641 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:03:02.000 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:03:04.169 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/view_cart
+2026-08-25 12:03:05.106 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: quantityChosenOnDetailsPageIsCarriedIntoTheCart
+2026-08-25 12:03:05.108 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Opening product 1 and setting the quantity to 4
+2026-08-25 12:03:05.109 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:03:06.235 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Adding it to the cart and opening the cart
+2026-08-25 12:03:07.384 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Submitting the payment form
+2026-08-25 12:03:08.453 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Checking the cart kept the chosen quantity and priced it accordingly
+2026-08-25 12:03:08.495 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: quantityChosenOnDetailsPageIsCarriedIntoTheCart (3.4s)
+2026-08-25 12:03:08.587 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   CartTest.quantityChosenOnDetailsPageIsCarriedIntoTheCart =====
+2026-08-25 12:03:08.587 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START CartTest.removingOneProductRemovesItsRowAndDropsTheCount [chrome, headless=true] =====
+2026-08-25 12:03:08.588 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:03:09.540 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:03:11.481 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/view_cart
+2026-08-25 12:03:12.055 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: cartIsEmptyAfterAnOrderIsPlaced (14.4s)
+2026-08-25 12:03:12.155 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   CheckoutOrderTest.cartIsEmptyAfterAnOrderIsPlaced =====
+2026-08-25 12:03:12.155 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START CheckoutOrderTest.checkoutShowsDeliveryAndBillingAddresses [chrome, headless=true] =====
+2026-08-25 12:03:12.155 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:03:13.085 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:03:13.688 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: removingOneProductRemovesItsRowAndDropsTheCount
+2026-08-25 12:03:13.692 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Building a cart with two different products
+2026-08-25 12:03:13.695 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:03:15.593 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: checkoutShowsDeliveryAndBillingAddresses
+2026-08-25 12:03:16.193 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639566595.24@mailinator.com
+2026-08-25 12:03:22.188 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:03:23.758 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/view_cart
+2026-08-25 12:03:23.869 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Removing product 1
+2026-08-25 12:03:23.869 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Removing product 1 from the cart
+2026-08-25 12:03:24.711 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Cart went from 2 to 1 item(s)
+2026-08-25 12:03:24.722 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: removingOneProductRemovesItsRowAndDropsTheCount (11.0s)
+2026-08-25 12:03:24.811 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   CartTest.removingOneProductRemovesItsRowAndDropsTheCount =====
+2026-08-25 12:03:24.812 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START CartTest.removingTheOnlyProductLeavesTheEmptyCartMessage [chrome, headless=true] =====
+2026-08-25 12:03:24.812 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:03:25.234 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: checkoutShowsDeliveryAndBillingAddresses (9.6s)
+2026-08-25 12:03:25.326 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   CheckoutOrderTest.checkoutShowsDeliveryAndBillingAddresses =====
+2026-08-25 12:03:25.326 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START CheckoutOrderTest.checkoutTotalMatchesTheCartTotal [chrome, headless=true] =====
+2026-08-25 12:03:25.326 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:03:25.768 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:03:26.258 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:03:29.062 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: removingTheOnlyProductLeavesTheEmptyCartMessage
+2026-08-25 12:03:29.065 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Adding a single product, then removing it again
+2026-08-25 12:03:29.065 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:03:29.987 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: checkoutTotalMatchesTheCartTotal
+2026-08-25 12:03:30.873 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639566595.24@mailinator.com
+2026-08-25 12:03:34.179 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Removing product 1 from the cart
+2026-08-25 12:03:34.764 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Cart went from 1 to 0 item(s)
+2026-08-25 12:03:34.764 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Checking the cart falls back to its empty state
+2026-08-25 12:03:34.792 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: removingTheOnlyProductLeavesTheEmptyCartMessage (5.7s)
+2026-08-25 12:03:34.891 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   CartTest.removingTheOnlyProductLeavesTheEmptyCartMessage =====
+2026-08-25 12:03:34.892 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START CartTest.singleProductAppearsInCartWithQuantityOne [chrome, headless=true] =====
+2026-08-25 12:03:34.892 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:03:35.842 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:03:36.225 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:03:38.339 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/view_cart
+2026-08-25 12:03:39.225 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Cart total is Rs. 2000
+2026-08-25 12:03:39.374 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: singleProductAppearsInCartWithQuantityOne
+2026-08-25 12:03:39.375 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Opening the products page and adding one product to the cart
+2026-08-25 12:03:39.375 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:03:40.427 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: checkoutTotalMatchesTheCartTotal (10.4s)
+2026-08-25 12:03:40.515 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   CheckoutOrderTest.checkoutTotalMatchesTheCartTotal =====
+2026-08-25 12:03:40.515 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START CheckoutOrderTest.deliveryAddressMatchesTheRegisteredDetails [chrome, headless=true] =====
+2026-08-25 12:03:40.515 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:03:41.477 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:03:43.070 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Checking the cart holds that one product
+2026-08-25 12:03:43.093 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: singleProductAppearsInCartWithQuantityOne (3.7s)
+2026-08-25 12:03:43.191 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   CartTest.singleProductAppearsInCartWithQuantityOne =====
+2026-08-25 12:03:43.191 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START CartTest.twoDifferentProductsProduceTwoCartRows [chrome, headless=true] =====
+2026-08-25 12:03:43.191 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:03:44.148 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:03:45.140 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: deliveryAddressMatchesTheRegisteredDetails
+2026-08-25 12:03:45.712 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639566595.24@mailinator.com
+2026-08-25 12:03:47.091 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: twoDifferentProductsProduceTwoCartRows
+2026-08-25 12:03:47.093 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Adding two different products to the cart
+2026-08-25 12:03:47.093 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:03:50.595 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:03:51.429 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Checking both products have their own row
+2026-08-25 12:03:51.443 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: twoDifferentProductsProduceTwoCartRows (4.4s)
+2026-08-25 12:03:51.538 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   CartTest.twoDifferentProductsProduceTwoCartRows =====
+2026-08-25 12:03:51.539 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START CartTest.viewCartFromTheModalOpensTheCartPage [chrome, headless=true] =====
+2026-08-25 12:03:51.539 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:03:52.509 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:03:52.525 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/view_cart
+2026-08-25 12:03:54.429 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: deliveryAddressMatchesTheRegisteredDetails (9.3s)
+2026-08-25 12:03:54.521 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   CheckoutOrderTest.deliveryAddressMatchesTheRegisteredDetails =====
+2026-08-25 12:03:54.521 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START CheckoutOrderTest.invoiceAmountMatchesTheOrderTotal [chrome, headless=true] =====
+2026-08-25 12:03:54.522 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:03:55.432 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:03:56.018 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: viewCartFromTheModalOpensTheCartPage
+2026-08-25 12:03:56.020 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Adding a product so the confirmation popup appears
+2026-08-25 12:03:56.020 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:03:58.018 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: invoiceAmountMatchesTheOrderTotal
+2026-08-25 12:03:59.145 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639566595.24@mailinator.com
+2026-08-25 12:03:59.298 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:03:59.741 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Following the 'View Cart' link in the popup
+2026-08-25 12:04:01.188 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: viewCartFromTheModalOpensTheCartPage (5.2s)
+2026-08-25 12:04:01.288 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   CartTest.viewCartFromTheModalOpensTheCartPage =====
+2026-08-25 12:04:01.290 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - Temporary upload fixture created at /var/folders/yy/wkl3_c2j3rdcq2rgl6pfxs3m0000gp/T/contact-us-attachment-17008001433484694566.txt
+2026-08-25 12:04:01.291 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ContactSubscriptionTest.cancellingTheConfirmDialogDoesNotSubmitTheContactForm [chrome, headless=true] =====
+2026-08-25 12:04:01.291 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:04:02.267 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:04:05.168 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/view_cart
+2026-08-25 12:04:05.207 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: cancellingTheConfirmDialogDoesNotSubmitTheContactForm
+2026-08-25 12:04:05.207 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/contact_us
+2026-08-25 12:04:06.149 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Filling in a valid enquiry that we are then going to abandon
+2026-08-25 12:04:06.286 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Submitting the form but pressing Cancel on the dialog
+2026-08-25 12:04:08.399 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Submitting the payment form
+2026-08-25 12:04:11.032 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: invoiceAmountMatchesTheOrderTotal (13.0s)
+2026-08-25 12:04:11.130 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   CheckoutOrderTest.invoiceAmountMatchesTheOrderTotal =====
+2026-08-25 12:04:11.131 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START CheckoutOrderTest.orderCanBePlacedEndToEnd [chrome, headless=true] =====
+2026-08-25 12:04:11.131 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:04:11.845 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: cancellingTheConfirmDialogDoesNotSubmitTheContactForm (6.6s)
+2026-08-25 12:04:11.941 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ContactSubscriptionTest.cancellingTheConfirmDialogDoesNotSubmitTheContactForm =====
+2026-08-25 12:04:11.942 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ContactSubscriptionTest.contactFormAcceptsAFileAttachment [chrome, headless=true] =====
+2026-08-25 12:04:11.942 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:04:12.079 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:04:12.835 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:04:15.631 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: orderCanBePlacedEndToEnd
+2026-08-25 12:04:16.139 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: contactFormAcceptsAFileAttachment
+2026-08-25 12:04:16.140 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/contact_us
+2026-08-25 12:04:16.189 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639566595.24@mailinator.com
+2026-08-25 12:04:16.332 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:04:17.088 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Filling in an enquiry that carries an attachment
+2026-08-25 12:04:17.234 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Attaching contact-us-attachment-17008001433484694566.txt
+2026-08-25 12:04:17.242 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Submitting the form and accepting the confirmation dialog
+2026-08-25 12:04:17.790 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Accepting browser alert: 'Press OK to proceed!'
+2026-08-25 12:04:17.857 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: contactFormAcceptsAFileAttachment (1.7s)
+2026-08-25 12:04:17.943 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ContactSubscriptionTest.contactFormAcceptsAFileAttachment =====
+2026-08-25 12:04:17.955 [TestNG-test-UI Tests-1] INFO  c.q.u.ExcelReader - Read 3 data row(s) from sheet 'ContactUs'
+2026-08-25 12:04:17.955 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ContactSubscriptionTest.contactFormIsSubmittedForEveryDataRow [chrome, headless=true] =====
+2026-08-25 12:04:17.955 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:04:18.902 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:04:21.473 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/view_cart
+2026-08-25 12:04:22.036 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: contactFormIsSubmittedForEveryDataRow [{testCaseId=CONTACT_01, name=Ananya Sen, email=ananya.qa@mailinator.com, subject=Order enquiry, message=I would like to know the delivery timeline for order 1042., description=Standard enquiry}]
+2026-08-25 12:04:22.037 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Data row CONTACT_01 - Standard enquiry
+2026-08-25 12:04:22.037 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/contact_us
+2026-08-25 12:04:23.689 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Placing the order
+2026-08-25 12:04:23.714 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Filling in the enquiry for Ananya Sen
+2026-08-25 12:04:23.849 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Submitting the form and accepting the confirmation dialog
+2026-08-25 12:04:24.394 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Accepting browser alert: 'Press OK to proceed!'
+2026-08-25 12:04:24.461 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: contactFormIsSubmittedForEveryDataRow [{testCaseId=CONTACT_01, name=Ananya Sen, email=ananya.qa@mailinator.com, subject=Order enquiry, message=I would like to know the delivery timeline for order 1042., description=Standard enquiry}] (2.4s)
+2026-08-25 12:04:24.548 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ContactSubscriptionTest.contactFormIsSubmittedForEveryDataRow =====
+2026-08-25 12:04:24.548 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ContactSubscriptionTest.contactFormIsSubmittedForEveryDataRow [chrome, headless=true] =====
+2026-08-25 12:04:24.548 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:04:24.830 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Submitting the payment form
+2026-08-25 12:04:25.486 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:04:27.214 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: orderCanBePlacedEndToEnd (11.6s)
+2026-08-25 12:04:27.311 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   CheckoutOrderTest.orderCanBePlacedEndToEnd =====
+2026-08-25 12:04:27.312 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START CheckoutOrderTest.orderCommentCanBeEntered [chrome, headless=true] =====
+2026-08-25 12:04:27.312 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:04:28.262 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:04:29.267 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: contactFormIsSubmittedForEveryDataRow [{testCaseId=CONTACT_02, name=Priya Nair, email=priya.qa@mailinator.com, subject=Bug report, message=The cart total does not refresh after I remove the last item., description=Bug report wording}]
+2026-08-25 12:04:29.267 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Data row CONTACT_02 - Bug report wording
+2026-08-25 12:04:29.268 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/contact_us
+2026-08-25 12:04:30.361 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Filling in the enquiry for Priya Nair
+2026-08-25 12:04:30.485 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Submitting the form and accepting the confirmation dialog
+2026-08-25 12:04:30.990 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: orderCommentCanBeEntered
+2026-08-25 12:04:31.021 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Accepting browser alert: 'Press OK to proceed!'
+2026-08-25 12:04:31.074 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: contactFormIsSubmittedForEveryDataRow [{testCaseId=CONTACT_02, name=Priya Nair, email=priya.qa@mailinator.com, subject=Bug report, message=The cart total does not refresh after I remove the last item., description=Bug report wording}] (1.8s)
+2026-08-25 12:04:31.164 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ContactSubscriptionTest.contactFormIsSubmittedForEveryDataRow =====
+2026-08-25 12:04:31.165 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ContactSubscriptionTest.contactFormIsSubmittedForEveryDataRow [chrome, headless=true] =====
+2026-08-25 12:04:31.165 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:04:32.104 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639566595.24@mailinator.com
+2026-08-25 12:04:32.111 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:04:35.594 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: contactFormIsSubmittedForEveryDataRow [{testCaseId=CONTACT_03, name=D, email=d.qa@mailinator.com, subject=Q, message=Short., description=Minimum-length values in every field}]
+2026-08-25 12:04:35.595 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Data row CONTACT_03 - Minimum-length values in every field
+2026-08-25 12:04:35.595 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/contact_us
+2026-08-25 12:04:36.848 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Filling in the enquiry for D
+2026-08-25 12:04:36.970 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Submitting the form and accepting the confirmation dialog
+2026-08-25 12:04:37.517 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Accepting browser alert: 'Press OK to proceed!'
+2026-08-25 12:04:37.585 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: contactFormIsSubmittedForEveryDataRow [{testCaseId=CONTACT_03, name=D, email=d.qa@mailinator.com, subject=Q, message=Short., description=Minimum-length values in every field}] (2.0s)
+2026-08-25 12:04:37.676 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ContactSubscriptionTest.contactFormIsSubmittedForEveryDataRow =====
+2026-08-25 12:04:37.676 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ContactSubscriptionTest.contactPageShowsTheGetInTouchHeading [chrome, headless=true] =====
+2026-08-25 12:04:37.676 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:04:38.314 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:04:38.646 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:04:40.283 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/view_cart
+2026-08-25 12:04:41.865 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: contactPageShowsTheGetInTouchHeading
+2026-08-25 12:04:41.865 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Opening Contact Us from the header navigation
+2026-08-25 12:04:42.404 [TestNG-test-UI Tests-2] INFO  c.q.u.ExtentManager - Adding a delivery comment to the order
+2026-08-25 12:04:43.017 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Submitting the payment form
+2026-08-25 12:04:43.068 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: contactPageShowsTheGetInTouchHeading (1.2s)
+2026-08-25 12:04:43.156 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ContactSubscriptionTest.contactPageShowsTheGetInTouchHeading =====
+2026-08-25 12:04:43.156 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ContactSubscriptionTest.homeButtonReturnsToTheHomePageAfterASuccessfulEnquiry [chrome, headless=true] =====
+2026-08-25 12:04:43.156 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:04:44.103 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:04:45.463 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: orderCommentCanBeEntered (14.5s)
+2026-08-25 12:04:45.558 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   CheckoutOrderTest.orderCommentCanBeEntered =====
+2026-08-25 12:04:45.558 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== START CheckoutOrderTest.paymentFormRequestsAllCardFields [chrome, headless=true] =====
+2026-08-25 12:04:45.558 [TestNG-test-UI Tests-2] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-2
+2026-08-25 12:04:46.509 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:04:47.271 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: homeButtonReturnsToTheHomePageAfterASuccessfulEnquiry
+2026-08-25 12:04:47.274 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/contact_us
+2026-08-25 12:04:48.331 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Submitting a valid enquiry
+2026-08-25 12:04:49.022 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Accepting browser alert: 'Press OK to proceed!'
+2026-08-25 12:04:49.079 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Clicking the Home button offered next to the success message
+2026-08-25 12:04:50.776 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - TEST START: paymentFormRequestsAllCardFields
+2026-08-25 12:04:51.845 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639566595.24@mailinator.com
+2026-08-25 12:04:53.426 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: homeButtonReturnsToTheHomePageAfterASuccessfulEnquiry (6.2s)
+2026-08-25 12:04:53.521 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ContactSubscriptionTest.homeButtonReturnsToTheHomePageAfterASuccessfulEnquiry =====
+2026-08-25 12:04:53.521 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ContactSubscriptionTest.malformedEmailIsNotAcceptedBySubscriptionBox [chrome, headless=true] =====
+2026-08-25 12:04:53.522 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:04:54.483 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:04:58.644 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: malformedEmailIsNotAcceptedBySubscriptionBox
+2026-08-25 12:04:58.645 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Trying to subscribe with the malformed address qa.auto.1787639698645.28-at-mailinator.com
+2026-08-25 12:05:02.121 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:05:03.937 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: malformedEmailIsNotAcceptedBySubscriptionBox (5.3s)
+2026-08-25 12:05:04.029 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ContactSubscriptionTest.malformedEmailIsNotAcceptedBySubscriptionBox =====
+2026-08-25 12:05:04.029 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ContactSubscriptionTest.subscribingFromTheCartPageFooterShowsTheSuccessMessage [chrome, headless=true] =====
+2026-08-25 12:05:04.029 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:05:04.544 [TestNG-test-UI Tests-2] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/view_cart
+2026-08-25 12:05:04.975 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:05:08.324 [TestNG-test-UI Tests-2] INFO  c.q.l.TestListener - PASS: paymentFormRequestsAllCardFields (17.5s)
+2026-08-25 12:05:08.423 [TestNG-test-UI Tests-2] INFO  c.q.b.BaseTest - ===== END   CheckoutOrderTest.paymentFormRequestsAllCardFields =====
+2026-08-25 12:05:08.424 [TestNG-test-UI Tests-2] INFO  c.q.a.c.BaseApiClient - DELETE /api/deleteAccount for qa.auto.1787639566595.24@mailinator.com
+2026-08-25 12:05:09.665 [TestNG-test-UI Tests-2] INFO  c.q.a.c.BaseApiClient - Cleanup delete for qa.auto.1787639566595.24@mailinator.com -> responseCode 200
+2026-08-25 12:05:09.990 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: subscribingFromTheCartPageFooterShowsTheSuccessMessage
+2026-08-25 12:05:09.990 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Opening the cart page
+2026-08-25 12:05:09.991 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/view_cart
+2026-08-25 12:05:10.430 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Subscribing from the cart page footer as qa.auto.1787639710430.29@mailinator.com
+2026-08-25 12:05:10.555 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: subscribingFromTheCartPageFooterShowsTheSuccessMessage (0.6s)
+2026-08-25 12:05:10.640 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ContactSubscriptionTest.subscribingFromTheCartPageFooterShowsTheSuccessMessage =====
+2026-08-25 12:05:10.640 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ContactSubscriptionTest.subscribingFromTheHomePageFooterShowsTheSuccessMessage [chrome, headless=true] =====
+2026-08-25 12:05:10.640 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:05:11.584 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:05:15.098 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: subscribingFromTheHomePageFooterShowsTheSuccessMessage
+2026-08-25 12:05:15.101 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Subscribing from the home page footer as qa.auto.1787639715101.30@mailinator.com
+2026-08-25 12:05:15.246 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: subscribingFromTheHomePageFooterShowsTheSuccessMessage (0.1s)
+2026-08-25 12:05:15.333 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ContactSubscriptionTest.subscribingFromTheHomePageFooterShowsTheSuccessMessage =====
+2026-08-25 12:05:15.334 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== START ContactSubscriptionTest.subscriptionHeadingIsVisibleInTheFooter [chrome, headless=true] =====
+2026-08-25 12:05:15.334 [TestNG-test-UI Tests-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-UI Tests-1
+2026-08-25 12:05:16.268 [TestNG-test-UI Tests-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:05:19.618 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - TEST START: subscriptionHeadingIsVisibleInTheFooter
+2026-08-25 12:05:19.619 [TestNG-test-UI Tests-1] INFO  c.q.u.ExtentManager - Scrolling to the footer and checking the subscription block
+2026-08-25 12:05:19.650 [TestNG-test-UI Tests-1] INFO  c.q.l.TestListener - PASS: subscriptionHeadingIsVisibleInTheFooter (0.0s)
+2026-08-25 12:05:19.742 [TestNG-test-UI Tests-1] INFO  c.q.b.BaseTest - ===== END   ContactSubscriptionTest.subscriptionHeadingIsVisibleInTheFooter =====
+2026-08-25 12:05:19.743 [main] INFO  c.q.l.TestListener - SUITE END: UI Tests | passed=87 failed=0 skipped=0
+2026-08-25 12:05:19.776 [main] INFO  c.q.u.ExtentManager - ExtentReport written: /Users/sayan.ghosh/Documents/Oindrila/selenium-hybrid-framework/reports/ExtentReport_20260825_115654.html
+2026-08-25 12:05:19.781 [main] INFO  c.q.l.TestListener - SUITE START: API-UI Cross Validation
+2026-08-25 12:05:19.782 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BaseTest - ===== START ApiUiCrossValidationTest.accountCreatedViaApiCanLogInThroughTheUi [chrome, headless=true] =====
+2026-08-25 12:05:19.782 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-API-UI Cross Validation-1
+2026-08-25 12:05:20.707 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:05:24.036 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.l.TestListener - TEST START: accountCreatedViaApiCanLogInThroughTheUi
+2026-08-25 12:05:24.036 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.a.c.BaseApiClient - POST /api/createAccount for qa.auto.1787639724036.31@mailinator.com
+2026-08-25 12:05:25.963 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.h.TestAccountManager - Test account created via API: qa.auto.1787639724036.31@mailinator.com
+2026-08-25 12:05:25.963 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.u.ExtentManager - Created qa.auto.1787639724036.31@mailinator.com over the API; now logging in with a browser
+2026-08-25 12:05:26.540 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639724036.31@mailinator.com
+2026-08-25 12:05:30.124 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.l.TestListener - PASS: accountCreatedViaApiCanLogInThroughTheUi (6.1s)
+2026-08-25 12:05:30.218 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BaseTest - ===== END   ApiUiCrossValidationTest.accountCreatedViaApiCanLogInThroughTheUi =====
+2026-08-25 12:05:30.219 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BaseTest - ===== START ApiUiCrossValidationTest.accountDeletedViaApiCannotLogInThroughTheUi [chrome, headless=true] =====
+2026-08-25 12:05:30.219 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-API-UI Cross Validation-1
+2026-08-25 12:05:31.163 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:05:35.433 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.l.TestListener - TEST START: accountDeletedViaApiCannotLogInThroughTheUi
+2026-08-25 12:05:35.433 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.a.c.BaseApiClient - POST /api/createAccount for qa.auto.1787639735433.32@mailinator.com
+2026-08-25 12:05:36.627 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.h.TestAccountManager - Test account created via API: qa.auto.1787639735433.32@mailinator.com
+2026-08-25 12:05:36.627 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.u.ExtentManager - Deleting qa.auto.1787639735433.32@mailinator.com through DELETE /api/deleteAccount
+2026-08-25 12:05:36.627 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.a.c.BaseApiClient - DELETE /api/deleteAccount for qa.auto.1787639735433.32@mailinator.com
+2026-08-25 12:05:37.438 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.u.ExtentManager - Attempting to log in with the deleted credentials
+2026-08-25 12:05:38.010 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Logging in as qa.auto.1787639735433.32@mailinator.com
+2026-08-25 12:05:43.415 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.l.TestListener - PASS: accountDeletedViaApiCannotLogInThroughTheUi (8.0s)
+2026-08-25 12:05:43.509 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BaseTest - ===== END   ApiUiCrossValidationTest.accountDeletedViaApiCannotLogInThroughTheUi =====
+2026-08-25 12:05:43.509 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BaseTest - ===== START ApiUiCrossValidationTest.accountRegisteredThroughTheUiIsVisibleToTheApi [chrome, headless=true] =====
+2026-08-25 12:05:43.509 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-API-UI Cross Validation-1
+2026-08-25 12:05:44.464 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:05:48.460 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.l.TestListener - TEST START: accountRegisteredThroughTheUiIsVisibleToTheApi
+2026-08-25 12:05:48.461 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.u.ExtentManager - Registering qa.auto.1787639748461.33@mailinator.com through the browser form
+2026-08-25 12:05:49.130 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Starting signup for qa.auto.1787639748461.33@mailinator.com
+2026-08-25 12:05:49.605 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Completing account information for qa.auto.1787639748461.33@mailinator.com
+2026-08-25 12:05:56.753 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.u.ExtentManager - Reading the same account back through GET /api/getUserDetailByEmail
+2026-08-25 12:05:56.753 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.a.c.BaseApiClient - GET /api/getUserDetailByEmail?email=qa.auto.1787639748461.33@mailinator.com
+2026-08-25 12:05:57.923 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.l.TestListener - PASS: accountRegisteredThroughTheUiIsVisibleToTheApi (9.5s)
+2026-08-25 12:05:58.015 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BaseTest - ===== END   ApiUiCrossValidationTest.accountRegisteredThroughTheUiIsVisibleToTheApi =====
+2026-08-25 12:05:58.016 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BaseTest - ===== START ApiUiCrossValidationTest.productPriceMatchesBetweenUiAndApi [chrome, headless=true] =====
+2026-08-25 12:05:58.016 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-API-UI Cross Validation-1
+2026-08-25 12:05:58.977 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:06:02.986 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.l.TestListener - TEST START: productPriceMatchesBetweenUiAndApi
+2026-08-25 12:06:02.990 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.a.c.BaseApiClient - GET /api/productsList
+2026-08-25 12:06:04.245 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.u.ExtentManager - API reports 'Blue Top' at Rs. 500
+2026-08-25 12:06:04.245 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/product_details/1
+2026-08-25 12:06:05.170 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.l.TestListener - PASS: productPriceMatchesBetweenUiAndApi (2.2s)
+2026-08-25 12:06:05.263 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BaseTest - ===== END   ApiUiCrossValidationTest.productPriceMatchesBetweenUiAndApi =====
+2026-08-25 12:06:05.263 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BaseTest - ===== START ApiUiCrossValidationTest.searchResultsMatchBetweenUiAndApi [chrome, headless=true] =====
+2026-08-25 12:06:05.263 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-API-UI Cross Validation-1
+2026-08-25 12:06:06.212 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:06:10.288 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.l.TestListener - TEST START: searchResultsMatchBetweenUiAndApi
+2026-08-25 12:06:10.288 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.a.c.BaseApiClient - POST /api/searchProduct search_product=top
+2026-08-25 12:06:11.140 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:06:14.707 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Searching products for 'top'
+2026-08-25 12:06:16.470 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.u.ExtentManager - API returned 14 results, the shop returned 14
+2026-08-25 12:06:16.471 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.l.TestListener - PASS: searchResultsMatchBetweenUiAndApi (6.2s)
+2026-08-25 12:06:16.561 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BaseTest - ===== END   ApiUiCrossValidationTest.searchResultsMatchBetweenUiAndApi =====
+2026-08-25 12:06:16.562 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BaseTest - ===== START ApiUiCrossValidationTest.uiCatalogueMatchesTheApiCatalogue [chrome, headless=true] =====
+2026-08-25 12:06:16.562 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.DriverFactory - Initialising CHROME driver (headless=true) on thread TestNG-test-API-UI Cross Validation-1
+2026-08-25 12:06:17.528 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/
+2026-08-25 12:06:20.023 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.l.TestListener - TEST START: uiCatalogueMatchesTheApiCatalogue
+2026-08-25 12:06:20.025 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.a.c.BaseApiClient - GET /api/productsList
+2026-08-25 12:06:21.837 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BasePage - Navigating to https://automationexercise.com/products
+2026-08-25 12:06:25.628 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.u.ExtentManager - API lists 34 products, the shop renders 34
+2026-08-25 12:06:25.629 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.l.TestListener - PASS: uiCatalogueMatchesTheApiCatalogue (5.6s)
+2026-08-25 12:06:25.717 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.b.BaseTest - ===== END   ApiUiCrossValidationTest.uiCatalogueMatchesTheApiCatalogue =====
+2026-08-25 12:06:25.717 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.a.c.BaseApiClient - DELETE /api/deleteAccount for qa.auto.1787639724036.31@mailinator.com
+2026-08-25 12:06:26.817 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.a.c.BaseApiClient - Cleanup delete for qa.auto.1787639724036.31@mailinator.com -> responseCode 200
+2026-08-25 12:06:26.817 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.a.c.BaseApiClient - DELETE /api/deleteAccount for qa.auto.1787639735433.32@mailinator.com
+2026-08-25 12:06:28.005 [TestNG-test-API-UI Cross Validation-1] INFO  c.q.a.c.BaseApiClient - Cleanup delete for qa.auto.1787639735433.32@mailinator.com -> responseCode 404
+2026-08-25 12:06:28.005 [main] INFO  c.q.l.TestListener - SUITE END: API-UI Cross Validation | passed=6 failed=0 skipped=0
+2026-08-25 12:06:28.028 [main] INFO  c.q.u.ExtentManager - ExtentReport written: /Users/sayan.ghosh/Documents/Oindrila/selenium-hybrid-framework/reports/ExtentReport_20260825_115654.html
+[INFO] Tests run: 120, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 574.2 s -- in TestSuite
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 120, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  09:35 min
+[INFO] Finished at: 2026-08-25T12:06:28+05:30
+[INFO] ------------------------------------------------------------------------

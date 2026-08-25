@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+  The full regression suite - the default for `mvn clean test`.
+
+  ON PARALLELISM
+  ==============
+  thread-count is deliberately low. The application under test is a shared public
+  practice site, and hammering it with a wide thread pool is both rude and a good
+  way to manufacture flakiness that looks like a product defect. The framework is
+  thread-safe (ThreadLocal driver, ThreadLocal ExtentTest), so this number can be
+  raised for a private environment - it is a courtesy limit, not a technical one.
+
+  The API tests run in their own <test> block because they need no browser.
+-->
+<suite name="Regression Suite" verbose="1" parallel="classes" thread-count="2">
+
+  <listeners>
+    <listener class-name="com.qa.listeners.TestListener"/>
+    <listener class-name="com.qa.listeners.RetryListener"/>
+  </listeners>
+
+  <test name="API Tests">
+    <classes>
+      <class name="com.qa.tests.api.ApiSmokeTest"/>
+      <class name="com.qa.tests.api.ProductApiTest"/>
+      <class name="com.qa.tests.api.UserApiTest"/>
+    </classes>
+  </test>
+
+  <test name="UI Tests">
+    <classes>
+      <class name="com.qa.tests.ui.SmokeTest"/>
+      <class name="com.qa.tests.ui.RegistrationTest"/>
+      <class name="com.qa.tests.ui.LoginLogoutTest"/>
+      <class name="com.qa.tests.ui.ProductSearchTest"/>
+      <class name="com.qa.tests.ui.ProductDetailsTest"/>
+      <class name="com.qa.tests.ui.CartTest"/>
+      <class name="com.qa.tests.ui.CheckoutOrderTest"/>
+      <class name="com.qa.tests.ui.ContactSubscriptionTest"/>
+    </classes>
+  </test>
+
+  <!-- Kept last and single-threaded: these drive the API and the browser against the
+       same account, so they must not race another test creating or deleting one. -->
+  <test name="API-UI Cross Validation">
+    <classes>
+      <class name="com.qa.tests.ui.ApiUiCrossValidationTest"/>
+    </classes>
+  </test>
+
+</suite>
