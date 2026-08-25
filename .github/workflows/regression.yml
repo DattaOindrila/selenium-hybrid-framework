@@ -31,10 +31,10 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up JDK 21
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v6
         with:
           java-version: '21'
           distribution: 'temurin'
@@ -45,7 +45,7 @@ jobs:
       # ubuntu-latest ships Chrome pre-installed, but pinning it explicitly means a
       # change to the runner image cannot silently change which browser was tested.
       - name: Set up Chrome
-        uses: browser-actions/setup-chrome@v1
+        uses: browser-actions/setup-chrome@v2
         with:
           chrome-version: stable
 
@@ -67,7 +67,7 @@ jobs:
       # always(): the report is at its most useful when the suite failed.
       - name: Upload the ExtentReport
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: extent-report
           path: |
@@ -78,7 +78,7 @@ jobs:
 
       - name: Upload the Surefire results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: surefire-reports
           path: target/surefire-reports/
