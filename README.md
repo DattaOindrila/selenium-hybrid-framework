@@ -13,7 +13,7 @@ ExtentReports and wired to GitHub Actions.
 **120 tests, 120 passed, 0 failed, 0 skipped, 0 retries — 9 min 35 s**
 Chrome 151, headless, macOS, JDK 21. Full console output: [`docs/console-output.txt`](docs/console-output.txt).
 
-The same suite on CI: **120 passed, 0 failed, 0 retries — 5 min 03 s** on `ubuntu-latest`,
+The same suite on CI: **120 passed, 0 failed, 0 retries — 4 min 04 s** on `ubuntu-latest`,
 headless Chrome 151, Temurin JDK 21.
 
 ![ExtentReport dashboard showing 120 tests passed and 0 failed, with a per-tag breakdown and the
@@ -320,7 +320,7 @@ The ExtentReport, the failure screenshots and the Surefire results are uploaded 
 `if: always()` — the report matters most when the suite has failed. A step summary reads the counts
 straight out of TestNG's own results file, so it cannot disagree with what ran.
 
-Verified against the live repository: green in 5m03s, 120/120 passing, zero retries, both
+Verified against the live repository: green in 4m04s, 120/120 passing, zero retries, both
 artefacts uploaded, no deprecation warnings.
 
 ![The GitHub Actions run page showing the Regression workflow completing successfully in 6 minutes
