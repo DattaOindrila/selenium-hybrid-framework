@@ -426,3 +426,14 @@ Written plainly, because a portfolio that claims everything worked perfectly is 
   registration form. A cart test is about the cart; driving eighteen form fields first makes it
   slower and makes it fail for reasons that belong to the registration test.
 - No credentials, URLs or test data are hardcoded in any test class.
+
+---
+
+## Related
+
+[`qa-lifecycle-opencart`](https://github.com/DattaOindrila/qa-lifecycle-opencart) —
+the companion project. Where this repository automates against a public practice
+site, that one runs a full testing lifecycle against a self-hosted OpenCart
+instance: test plan, 148 test cases and an RTM, SQL and JDBC database validation,
+a Postman collection driven through Newman, and a JMeter load test taken past the
+point where the application breaks.
